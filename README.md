@@ -1,4 +1,4 @@
-# fabra
+# Fabra Python SDK
 
 <!-- Start SDK Installation -->
 ## SDK Installation
