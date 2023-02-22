@@ -1,0 +1,5 @@
+python:
+    version: 0.0.0
+    packagename: fabra
+    author: fabra
+sdkclassname: Fabra
