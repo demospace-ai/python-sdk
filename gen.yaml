@@ -3,7 +3,7 @@ management:
     openapi-version: 0.1.0
     speakeasy-version: 1.4.8
 python:
-    version: 0.1.1
+    version: 0.1.2
     packagename: fabra
     author: fabra
 sdkclassname: Fabra
