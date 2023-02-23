@@ -1,7 +1,12 @@
 name: Generate
 
 on:
-  workflow_dispatch: {} # Allows manual triggering of the workflow to generate SDK
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force the generation of the SDKs"
+        type: boolean
+        default: false
   schedule:
     - cron: 0 0 * * * # Runs every day at midnight
 
@@ -13,8 +18,10 @@ jobs:
       openapi_doc_location: ./openapi.yaml
       languages: |-
         - python: ./
-       
+      publish_python: true
+      force: ${{ github.event.inputs.force }} 
       mode: pr
     secrets:
+      pypi_token: ${{ secrets.PYPI_TOKEN }}
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
       speakeasy_api_key: ${{ secrets.SPEAKEASY_API_KEY }}
