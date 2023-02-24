@@ -1,14 +1,15 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import destination as shared_destination
-from dataclasses_json import dataclass_json
+from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
 from typing import Optional
 
 
-@dataclass_json
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetDestinations200ApplicationJSON:
-    destinations: Optional[list[shared_destination.Destination]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('destinations') }})
+    destinations: Optional[list[shared_destination.Destination]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('destinations'), 'exclude': lambda f: f is None }})
     
 
 @dataclasses.dataclass
