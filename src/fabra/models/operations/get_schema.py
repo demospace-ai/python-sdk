@@ -1,5 +1,6 @@
 from __future__ import annotations
 import dataclasses
+import requests
 from ..shared import columnschema as shared_columnschema
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
@@ -21,7 +22,7 @@ class GetSchemaRequest:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetSchema200ApplicationJSON:
-    schema: Optional[list[shared_columnschema.ColumnSchema]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('schema'), 'exclude': lambda f: f is None }})
+    schema: Optional[list[shared_columnschema.ColumnSchema]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schema'), 'exclude': lambda f: f is None }})
     
 
 @dataclasses.dataclass
@@ -29,4 +30,5 @@ class GetSchemaResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_schema_200_application_json_object: Optional[GetSchema200ApplicationJSON] = dataclasses.field(default=None)
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     

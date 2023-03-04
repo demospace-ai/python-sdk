@@ -1,5 +1,6 @@
 from __future__ import annotations
 import dataclasses
+import requests
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
 from typing import Optional
@@ -18,7 +19,7 @@ class GetNamespacesRequest:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetNamespaces200ApplicationJSON:
-    namespaces: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('namespaces'), 'exclude': lambda f: f is None }})
+    namespaces: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('namespaces'), 'exclude': lambda f: f is None }})
     
 
 @dataclasses.dataclass
@@ -26,4 +27,5 @@ class GetNamespacesResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_namespaces_200_application_json_object: Optional[GetNamespaces200ApplicationJSON] = dataclasses.field(default=None)
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     

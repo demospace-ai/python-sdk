@@ -18,65 +18,63 @@ class Source:
         self._language = language
         self._sdk_version = sdk_version
         self._gen_version = gen_version
-
-    
+        
     def create_source(self, request: operations.CreateSourceRequest) -> operations.CreateSourceResponse:
         r"""Create a new source
         """
         
         base_url = self._server_url
         
-        url = base_url.removesuffix("/") + "/source"
+        url = base_url.removesuffix('/') + '/source'
         
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request)
-        if req_content_type != "multipart/form-data" and req_content_type != "multipart/mixed":
-            headers["content-type"] = req_content_type
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
         if data is None and form is None:
-           raise Exception('request body is required')
+            raise Exception('request body is required')
         
         client = self._security_client
         
-        r = client.request("POST", url, data=data, files=form, headers=headers)
-        content_type = r.headers.get("Content-Type")
+        http_res = client.request('POST', url, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
 
-        res = operations.CreateSourceResponse(status_code=r.status_code, content_type=content_type)
+        res = operations.CreateSourceResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if r.status_code == 200:
-            if utils.match_content_type(content_type, "application/json"):
-                out = utils.unmarshal_json(r.text, Optional[operations.CreateSource200ApplicationJSON])
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[operations.CreateSource200ApplicationJSON])
                 res.create_source_200_application_json_object = out
-        elif r.status_code == 401:
+        elif http_res.status_code == 401:
             pass
-        elif r.status_code == 500:
+        elif http_res.status_code == 500:
             pass
 
         return res
 
-    
     def get_sources(self) -> operations.GetSourcesResponse:
         r"""Get all sources
         """
         
         base_url = self._server_url
         
-        url = base_url.removesuffix("/") + "/sources"
+        url = base_url.removesuffix('/') + '/sources'
         
         
         client = self._security_client
         
-        r = client.request("GET", url)
-        content_type = r.headers.get("Content-Type")
+        http_res = client.request('GET', url)
+        content_type = http_res.headers.get('Content-Type')
 
-        res = operations.GetSourcesResponse(status_code=r.status_code, content_type=content_type)
+        res = operations.GetSourcesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if r.status_code == 200:
-            if utils.match_content_type(content_type, "application/json"):
-                out = utils.unmarshal_json(r.text, Optional[operations.GetSources200ApplicationJSON])
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[operations.GetSources200ApplicationJSON])
                 res.get_sources_200_application_json_object = out
-        elif r.status_code == 401:
+        elif http_res.status_code == 401:
             pass
-        elif r.status_code == 500:
+        elif http_res.status_code == 500:
             pass
 
         return res

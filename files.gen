@@ -4,6 +4,7 @@ src/fabra/object.py
 src/fabra/source.py
 src/fabra/sync.py
 src/fabra/sdk.py
+pylintrc
 setup.py
 src/fabra/__init__.py
 src/fabra/models/__init__.py
