@@ -57,6 +57,10 @@ if res.get_namespaces_200_application_json_object is not None:
 * `create_destination` - Create a new destination
 * `get_destinations` - Get all destinations
 
+### link_token
+
+* `create_link_token` - Create a new link token
+
 ### object
 
 * `create_object` - Create a new object

@@ -1,9 +1,9 @@
 import requests as requests_http
 from . import utils
-from fabra.models import operations
+from fabra.models import operations, shared
 from typing import Optional
 
-class Object:
+class LinkToken:
     _client: requests_http.Session
     _security_client: requests_http.Session
     _server_url: str
@@ -19,13 +19,13 @@ class Object:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
-    def create_object(self, request: operations.CreateObjectRequest) -> operations.CreateObjectResponse:
-        r"""Create a new object
+    def create_link_token(self, request: operations.CreateLinkTokenRequest) -> operations.CreateLinkTokenResponse:
+        r"""Create a new link token
         """
         
         base_url = self._server_url
         
-        url = base_url.removesuffix('/') + '/object'
+        url = base_url.removesuffix('/') + '/link_token'
         
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request)
@@ -39,39 +39,12 @@ class Object:
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
-        res = operations.CreateObjectResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateLinkTokenResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.CreateObject200ApplicationJSON])
-                res.create_object_200_application_json_object = out
-        elif http_res.status_code == 401:
-            pass
-        elif http_res.status_code == 500:
-            pass
-
-        return res
-
-    def get_objects(self) -> operations.GetObjectsResponse:
-        r"""Get all objects
-        """
-        
-        base_url = self._server_url
-        
-        url = base_url.removesuffix('/') + '/objects'
-        
-        
-        client = self._security_client
-        
-        http_res = client.request('GET', url)
-        content_type = http_res.headers.get('Content-Type')
-
-        res = operations.GetObjectsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
-        
-        if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetObjects200ApplicationJSON])
-                res.get_objects_200_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, Optional[shared.CreateLinkTokenResponse])
+                res.create_link_token_response = out
         elif http_res.status_code == 401:
             pass
         elif http_res.status_code == 500:

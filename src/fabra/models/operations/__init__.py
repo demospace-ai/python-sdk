@@ -1,4 +1,5 @@
 from .create_destination import *
+from .create_link_token import *
 from .create_object import *
 from .create_source import *
 from .create_sync import *
@@ -10,4 +11,4 @@ from .get_sources import *
 from .get_syncs import *
 from .get_tables import *
 
-__all__ = ["CreateDestination200ApplicationJSON","CreateDestinationRequest","CreateDestinationResponse","CreateObject200ApplicationJSON","CreateObjectRequest","CreateObjectResponse","CreateSource200ApplicationJSON","CreateSourceRequest","CreateSourceResponse","CreateSync200ApplicationJSON","CreateSyncRequest","CreateSyncResponse","GetDestinations200ApplicationJSON","GetDestinationsResponse","GetNamespaces200ApplicationJSON","GetNamespacesQueryParams","GetNamespacesRequest","GetNamespacesResponse","GetObjects200ApplicationJSON","GetObjectsResponse","GetSchema200ApplicationJSON","GetSchemaQueryParams","GetSchemaRequest","GetSchemaResponse","GetSources200ApplicationJSON","GetSourcesResponse","GetSyncs200ApplicationJSON","GetSyncsResponse","GetTables200ApplicationJSON","GetTablesQueryParams","GetTablesRequest","GetTablesResponse"]
+__all__ = ["CreateDestination200ApplicationJSON","CreateDestinationRequest","CreateDestinationResponse","CreateLinkTokenRequest","CreateLinkTokenResponse","CreateObject200ApplicationJSON","CreateObjectRequest","CreateObjectResponse","CreateSource200ApplicationJSON","CreateSourceRequest","CreateSourceResponse","CreateSync200ApplicationJSON","CreateSyncRequest","CreateSyncResponse","GetDestinations200ApplicationJSON","GetDestinationsResponse","GetNamespaces200ApplicationJSON","GetNamespacesQueryParams","GetNamespacesRequest","GetNamespacesResponse","GetObjects200ApplicationJSON","GetObjectsResponse","GetSchema200ApplicationJSON","GetSchemaQueryParams","GetSchemaRequest","GetSchemaResponse","GetSources200ApplicationJSON","GetSourcesResponse","GetSyncs200ApplicationJSON","GetSyncsResponse","GetTables200ApplicationJSON","GetTablesQueryParams","GetTablesRequest","GetTablesResponse"]

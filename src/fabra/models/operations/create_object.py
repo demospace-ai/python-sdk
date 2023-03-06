@@ -1,6 +1,6 @@
 from __future__ import annotations
 import dataclasses
-import requests
+import requests as requests_http
 from ..shared import object as shared_object
 from ..shared import objectinput as shared_objectinput
 from dataclasses_json import Undefined, dataclass_json
@@ -24,5 +24,5 @@ class CreateObjectResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     create_object_200_application_json_object: Optional[CreateObject200ApplicationJSON] = dataclasses.field(default=None)
-    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
