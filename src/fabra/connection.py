@@ -18,90 +18,87 @@ class Connection:
         self._language = language
         self._sdk_version = sdk_version
         self._gen_version = gen_version
-
-    
+        
     def get_namespaces(self, request: operations.GetNamespacesRequest) -> operations.GetNamespacesResponse:
         r"""Get all namespaces
         """
         
         base_url = self._server_url
         
-        url = base_url.removesuffix("/") + "/connection/namespaces"
+        url = base_url.removesuffix('/') + '/connection/namespaces'
         
         query_params = utils.get_query_params(request.query_params)
         
         client = self._security_client
         
-        r = client.request("GET", url, params=query_params)
-        content_type = r.headers.get("Content-Type")
+        http_res = client.request('GET', url, params=query_params)
+        content_type = http_res.headers.get('Content-Type')
 
-        res = operations.GetNamespacesResponse(status_code=r.status_code, content_type=content_type)
+        res = operations.GetNamespacesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if r.status_code == 200:
-            if utils.match_content_type(content_type, "application/json"):
-                out = utils.unmarshal_json(r.text, Optional[operations.GetNamespaces200ApplicationJSON])
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[operations.GetNamespaces200ApplicationJSON])
                 res.get_namespaces_200_application_json_object = out
-        elif r.status_code == 401:
+        elif http_res.status_code == 401:
             pass
-        elif r.status_code == 500:
+        elif http_res.status_code == 500:
             pass
 
         return res
 
-    
     def get_schema(self, request: operations.GetSchemaRequest) -> operations.GetSchemaResponse:
         r"""Get schema for table
         """
         
         base_url = self._server_url
         
-        url = base_url.removesuffix("/") + "/connection/schema"
+        url = base_url.removesuffix('/') + '/connection/schema'
         
         query_params = utils.get_query_params(request.query_params)
         
         client = self._security_client
         
-        r = client.request("GET", url, params=query_params)
-        content_type = r.headers.get("Content-Type")
+        http_res = client.request('GET', url, params=query_params)
+        content_type = http_res.headers.get('Content-Type')
 
-        res = operations.GetSchemaResponse(status_code=r.status_code, content_type=content_type)
+        res = operations.GetSchemaResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if r.status_code == 200:
-            if utils.match_content_type(content_type, "application/json"):
-                out = utils.unmarshal_json(r.text, Optional[operations.GetSchema200ApplicationJSON])
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[operations.GetSchema200ApplicationJSON])
                 res.get_schema_200_application_json_object = out
-        elif r.status_code == 401:
+        elif http_res.status_code == 401:
             pass
-        elif r.status_code == 500:
+        elif http_res.status_code == 500:
             pass
 
         return res
 
-    
     def get_tables(self, request: operations.GetTablesRequest) -> operations.GetTablesResponse:
         r"""Get all tables
         """
         
         base_url = self._server_url
         
-        url = base_url.removesuffix("/") + "/connection/tables"
+        url = base_url.removesuffix('/') + '/connection/tables'
         
         query_params = utils.get_query_params(request.query_params)
         
         client = self._security_client
         
-        r = client.request("GET", url, params=query_params)
-        content_type = r.headers.get("Content-Type")
+        http_res = client.request('GET', url, params=query_params)
+        content_type = http_res.headers.get('Content-Type')
 
-        res = operations.GetTablesResponse(status_code=r.status_code, content_type=content_type)
+        res = operations.GetTablesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if r.status_code == 200:
-            if utils.match_content_type(content_type, "application/json"):
-                out = utils.unmarshal_json(r.text, Optional[operations.GetTables200ApplicationJSON])
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[operations.GetTables200ApplicationJSON])
                 res.get_tables_200_application_json_object = out
-        elif r.status_code == 401:
+        elif http_res.status_code == 401:
             pass
-        elif r.status_code == 500:
+        elif http_res.status_code == 500:
             pass
 
         return res

@@ -1,5 +1,6 @@
 from __future__ import annotations
 import dataclasses
+import requests
 from ..shared import source as shared_source
 from ..shared import sourceinput as shared_sourceinput
 from dataclasses_json import Undefined, dataclass_json
@@ -15,7 +16,7 @@ class CreateSourceRequest:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CreateSource200ApplicationJSON:
-    source: Optional[shared_source.Source] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('source'), 'exclude': lambda f: f is None }})
+    source: Optional[shared_source.Source] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
     
 
 @dataclasses.dataclass
@@ -23,4 +24,5 @@ class CreateSourceResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     create_source_200_application_json_object: Optional[CreateSource200ApplicationJSON] = dataclasses.field(default=None)
+    raw_response: Optional[requests.Response] = dataclasses.field(default=None)
     

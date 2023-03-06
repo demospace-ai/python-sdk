@@ -1,4 +1,3 @@
-
 import requests
 from . import utils
 from .connection import Connection
@@ -12,36 +11,34 @@ SERVERS = [
 	"https://api.fabra.io",
 ]
 
-
 class Fabra:
-    
     connection: Connection
     destination: Destination
     object: Object
     source: Source
     sync: Sync
-
+    
     _client: requests.Session
     _security_client: requests.Session
     _security: shared.Security
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "0.2.1"
-    _gen_version: str = "1.5.3"
+    _sdk_version: str = "0.5.1"
+    _gen_version: str = "1.8.4"
 
     def __init__(self) -> None:
         self._client = requests.Session()
         self._security_client = requests.Session()
         self._init_sdks()
 
-
-    def config_server_url(self, server_url: str, params: dict[str, str]):
+    def config_server_url(self, server_url: str, params: dict[str, str] = None):
         if params is not None:
-            self._server_url = utils.replace_parameters(server_url, params)
+            self._server_url = utils.template_url(server_url, params)
         else:
             self._server_url = server_url
 
         self._init_sdks()
+    
     
 
     def config_client(self, client: requests.Session):
@@ -51,15 +48,12 @@ class Fabra:
             self._security_client = utils.configure_security_client(self._client, self._security)
         self._init_sdks()
     
-
     def config_security(self, security: shared.Security):
         self._security = security
         self._security_client = utils.configure_security_client(self._client, security)
         self._init_sdks()
     
-    
     def _init_sdks(self):
-        
         self.connection = Connection(
             self._client,
             self._security_client,
@@ -104,5 +98,5 @@ class Fabra:
             self._sdk_version,
             self._gen_version
         )
-    
+        
     
