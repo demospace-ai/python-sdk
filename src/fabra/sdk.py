@@ -1,7 +1,8 @@
-import requests
+import requests as requests_http
 from . import utils
 from .connection import Connection
 from .destination import Destination
+from .link_token import LinkToken
 from .object import Object
 from .source import Source
 from .sync import Sync
@@ -14,21 +15,22 @@ SERVERS = [
 class Fabra:
     connection: Connection
     destination: Destination
+    link_token: LinkToken
     object: Object
     source: Source
     sync: Sync
     
-    _client: requests.Session
-    _security_client: requests.Session
+    _client: requests_http.Session
+    _security_client: requests_http.Session
     _security: shared.Security
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "0.5.1"
-    _gen_version: str = "1.8.4"
+    _sdk_version: str = "0.5.2"
+    _gen_version: str = "1.8.5"
 
     def __init__(self) -> None:
-        self._client = requests.Session()
-        self._security_client = requests.Session()
+        self._client = requests_http.Session()
+        self._security_client = requests_http.Session()
         self._init_sdks()
 
     def config_server_url(self, server_url: str, params: dict[str, str] = None):
@@ -41,7 +43,7 @@ class Fabra:
     
     
 
-    def config_client(self, client: requests.Session):
+    def config_client(self, client: requests_http.Session):
         self._client = client
         
         if self._security is not None:
@@ -64,6 +66,15 @@ class Fabra:
         )
         
         self.destination = Destination(
+            self._client,
+            self._security_client,
+            self._server_url,
+            self._language,
+            self._sdk_version,
+            self._gen_version
+        )
+        
+        self.link_token = LinkToken(
             self._client,
             self._security_client,
             self._server_url,

@@ -1,5 +1,6 @@
 src/fabra/connection.py
 src/fabra/destination.py
+src/fabra/link_token.py
 src/fabra/object.py
 src/fabra/source.py
 src/fabra/sync.py
@@ -16,6 +17,7 @@ src/fabra/models/operations/get_schema.py
 src/fabra/models/operations/get_tables.py
 src/fabra/models/operations/create_destination.py
 src/fabra/models/operations/get_destinations.py
+src/fabra/models/operations/create_link_token.py
 src/fabra/models/operations/create_object.py
 src/fabra/models/operations/get_objects.py
 src/fabra/models/operations/create_source.py
@@ -33,6 +35,8 @@ src/fabra/models/shared/snowflakeconfig.py
 src/fabra/models/shared/redshiftconfig.py
 src/fabra/models/shared/mongodbconfig.py
 src/fabra/models/shared/bigqueryconfig.py
+src/fabra/models/shared/createlinktokenresponse.py
+src/fabra/models/shared/createlinktokenrequest.py
 src/fabra/models/shared/object.py
 src/fabra/models/shared/objectfield.py
 src/fabra/models/shared/objectinput.py
