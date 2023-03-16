@@ -27,7 +27,7 @@ class Connection:
         
         url = base_url.removesuffix('/') + '/connection/namespaces'
         
-        query_params = utils.get_query_params(request.query_params)
+        query_params = utils.get_query_params(operations.GetNamespacesQueryParams, request.query_params)
         
         client = self._security_client
         
@@ -40,9 +40,7 @@ class Connection:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetNamespaces200ApplicationJSON])
                 res.get_namespaces_200_application_json_object = out
-        elif http_res.status_code == 401:
-            pass
-        elif http_res.status_code == 500:
+        elif http_res.status_code in [401, 500]:
             pass
 
         return res
@@ -55,7 +53,7 @@ class Connection:
         
         url = base_url.removesuffix('/') + '/connection/schema'
         
-        query_params = utils.get_query_params(request.query_params)
+        query_params = utils.get_query_params(operations.GetSchemaQueryParams, request.query_params)
         
         client = self._security_client
         
@@ -68,9 +66,7 @@ class Connection:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetSchema200ApplicationJSON])
                 res.get_schema_200_application_json_object = out
-        elif http_res.status_code == 401:
-            pass
-        elif http_res.status_code == 500:
+        elif http_res.status_code in [401, 500]:
             pass
 
         return res
@@ -83,7 +79,7 @@ class Connection:
         
         url = base_url.removesuffix('/') + '/connection/tables'
         
-        query_params = utils.get_query_params(request.query_params)
+        query_params = utils.get_query_params(operations.GetTablesQueryParams, request.query_params)
         
         client = self._security_client
         
@@ -96,9 +92,7 @@ class Connection:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetTables200ApplicationJSON])
                 res.get_tables_200_application_json_object = out
-        elif http_res.status_code == 401:
-            pass
-        elif http_res.status_code == 500:
+        elif http_res.status_code in [401, 500]:
             pass
 
         return res

@@ -28,7 +28,7 @@ class Destination:
         url = base_url.removesuffix('/') + '/destination'
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -45,9 +45,7 @@ class Destination:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.CreateDestination200ApplicationJSON])
                 res.create_destination_200_application_json_object = out
-        elif http_res.status_code == 401:
-            pass
-        elif http_res.status_code == 500:
+        elif http_res.status_code in [401, 500]:
             pass
 
         return res
@@ -72,9 +70,7 @@ class Destination:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetDestinations200ApplicationJSON])
                 res.get_destinations_200_application_json_object = out
-        elif http_res.status_code == 401:
-            pass
-        elif http_res.status_code == 500:
+        elif http_res.status_code in [401, 500]:
             pass
 
         return res

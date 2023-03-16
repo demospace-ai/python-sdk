@@ -28,7 +28,7 @@ class LinkToken:
         url = base_url.removesuffix('/') + '/link_token'
         
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -45,9 +45,7 @@ class LinkToken:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.CreateLinkTokenResponse])
                 res.create_link_token_response = out
-        elif http_res.status_code == 401:
-            pass
-        elif http_res.status_code == 500:
+        elif http_res.status_code in [401, 500]:
             pass
 
         return res

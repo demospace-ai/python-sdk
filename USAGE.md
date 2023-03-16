@@ -3,14 +3,14 @@
 import fabra
 from fabra.models import operations, shared
 
-s = fabra.Fabra()
-s.config_security(
+s = fabra.Fabra(
     security=shared.Security(
         api_key_auth=shared.SchemeAPIKeyAuth(
             api_key="YOUR_API_KEY_HERE",
         ),
-    )
+    ),
 )
+
    
 req = operations.GetNamespacesRequest(
     query_params=operations.GetNamespacesQueryParams(
