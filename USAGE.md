@@ -20,7 +20,7 @@ req = operations.GetNamespacesRequest(
     
 res = s.connection.get_namespaces(req)
 
-if res.get_namespaces_200_application_json_object is not None:
+if res.namespaces is not None:
     # handle response
 ```
 <!-- End SDK Example Usage -->

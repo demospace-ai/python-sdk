@@ -25,6 +25,7 @@ src/fabra/models/operations/get_sources.py
 src/fabra/models/operations/create_sync.py
 src/fabra/models/operations/get_syncs.py
 src/fabra/models/operations/__init__.py
+src/fabra/models/shared/namespaces.py
 src/fabra/models/shared/field.py
 src/fabra/models/shared/fieldtype_enum.py
 src/fabra/models/shared/destination.py

@@ -6,6 +6,7 @@ from fabra.models import operations
 from typing import Optional
 
 class Object:
+    r"""Operations on objects"""
     _client: requests_http.Session
     _security_client: requests_http.Session
     _server_url: str

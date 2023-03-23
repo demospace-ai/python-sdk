@@ -2,10 +2,11 @@
 
 import requests as requests_http
 from . import utils
-from fabra.models import operations
+from fabra.models import operations, shared
 from typing import Optional
 
 class Connection:
+    r"""Operations on connections"""
     _client: requests_http.Session
     _security_client: requests_http.Session
     _server_url: str
@@ -38,8 +39,8 @@ class Connection:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetNamespaces200ApplicationJSON])
-                res.get_namespaces_200_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, Optional[shared.Namespaces])
+                res.namespaces = out
         elif http_res.status_code in [401, 500]:
             pass
 

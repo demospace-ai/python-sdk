@@ -17,11 +17,13 @@ SERVERS = [
 
 class Fabra:
     connection: Connection
+    r"""Operations on connections"""
     destination: Destination
     r"""Operations on destinations"""
     link_token: LinkToken
     r"""Operations on link tokens"""
     object: Object
+    r"""Operations on objects"""
     source: Source
     r"""Operations on sources"""
     sync: Sync
@@ -31,8 +33,8 @@ class Fabra:
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "0.8.0"
-    _gen_version: str = "2.12.10"
+    _sdk_version: str = "0.9.0"
+    _gen_version: str = "2.13.1"
 
     def __init__(self,
                  security: shared.Security = None,

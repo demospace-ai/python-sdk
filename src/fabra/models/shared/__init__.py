@@ -12,6 +12,7 @@ from .fieldmapping import *
 from .fieldtype_enum import *
 from .frequencyunits_enum import *
 from .mongodbconfig import *
+from .namespaces import *
 from .object import *
 from .objectfield import *
 from .objectinput import *
@@ -23,4 +24,4 @@ from .sourceinput import *
 from .sync import *
 from .syncinput import *
 
-__all__ = ["BigQueryConfig","Connection","ConnectionTypeEnum","CreateLinkTokenRequest","CreateLinkTokenResponse","Destination","DestinationInput","Field","FieldMapping","FieldTypeEnum","FrequencyUnitsEnum","MongoDbConfig","Object","ObjectField","ObjectInput","RedshiftConfig","SchemeAPIKeyAuth","Security","SnowflakeConfig","Source","SourceInput","Sync","SyncInput"]
+__all__ = ["BigQueryConfig","Connection","ConnectionTypeEnum","CreateLinkTokenRequest","CreateLinkTokenResponse","Destination","DestinationInput","Field","FieldMapping","FieldTypeEnum","FrequencyUnitsEnum","MongoDbConfig","Namespaces","Object","ObjectField","ObjectInput","RedshiftConfig","SchemeAPIKeyAuth","Security","SnowflakeConfig","Source","SourceInput","Sync","SyncInput"]
