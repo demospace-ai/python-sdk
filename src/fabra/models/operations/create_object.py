@@ -4,17 +4,10 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import object as shared_object
-from ..shared import objectinput as shared_objectinput
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
 from typing import Optional
 
-
-@dataclasses.dataclass
-class CreateObjectRequest:
-    
-    request: shared_objectinput.ObjectInput = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})  
-    
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass

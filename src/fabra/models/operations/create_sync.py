@@ -4,17 +4,10 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import sync as shared_sync
-from ..shared import syncinput as shared_syncinput
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
 from typing import Optional
 
-
-@dataclasses.dataclass
-class CreateSyncRequest:
-    
-    request: shared_syncinput.SyncInput = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})  
-    
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass

@@ -3,16 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import createlinktokenrequest as shared_createlinktokenrequest
 from ..shared import createlinktokenresponse as shared_createlinktokenresponse
 from typing import Optional
 
-
-@dataclasses.dataclass
-class CreateLinkTokenRequest:
-    
-    request: shared_createlinktokenrequest.CreateLinkTokenRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})  
-    
 
 @dataclasses.dataclass
 class CreateLinkTokenResponse:

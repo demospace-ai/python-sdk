@@ -4,17 +4,10 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import destination as shared_destination
-from ..shared import destinationinput as shared_destinationinput
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
 from typing import Optional
 
-
-@dataclasses.dataclass
-class CreateDestinationRequest:
-    
-    request: shared_destinationinput.DestinationInput = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})  
-    
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass

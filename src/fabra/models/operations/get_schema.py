@@ -10,17 +10,11 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetSchemaQueryParams:
+class GetSchemaRequest:
     
     connection_id: int = dataclasses.field(metadata={'query_param': { 'field_name': 'connectionID', 'style': 'form', 'explode': True }})  
     namespace: str = dataclasses.field(metadata={'query_param': { 'field_name': 'namespace', 'style': 'form', 'explode': True }})  
     table_name: str = dataclasses.field(metadata={'query_param': { 'field_name': 'tableName', 'style': 'form', 'explode': True }})  
-    
-
-@dataclasses.dataclass
-class GetSchemaRequest:
-    
-    query_params: GetSchemaQueryParams = dataclasses.field()  
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

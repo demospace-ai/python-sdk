@@ -2,7 +2,7 @@
 
 import requests as requests_http
 from . import utils
-from fabra.models import operations
+from fabra.models import operations, shared
 from typing import Optional
 
 class Destination:
@@ -22,7 +22,7 @@ class Destination:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
-    def create_destination(self, request: operations.CreateDestinationRequest) -> operations.CreateDestinationResponse:
+    def create_destination(self, request: shared.DestinationInput) -> operations.CreateDestinationResponse:
         r"""Create a new destination"""
         base_url = self._server_url
         

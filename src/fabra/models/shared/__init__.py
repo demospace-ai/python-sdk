@@ -24,4 +24,4 @@ from .sourceinput import *
 from .sync import *
 from .syncinput import *
 
-__all__ = ["BigQueryConfig","Connection","ConnectionTypeEnum","CreateLinkTokenRequest","CreateLinkTokenResponse","Destination","DestinationInput","Field","FieldMapping","FieldTypeEnum","FrequencyUnitsEnum","MongoDbConfig","Namespaces","Object","ObjectField","ObjectInput","RedshiftConfig","SchemeAPIKeyAuth","Security","SnowflakeConfig","Source","SourceInput","Sync","SyncInput"]
+__all__ = ["BigQueryConfig","Connection","ConnectionTypeEnum","CreateLinkTokenRequest","CreateLinkTokenResponse","Destination","DestinationInput","Field","FieldMapping","FieldTypeEnum","FrequencyUnitsEnum","MongoDbConfig","Namespaces","Object","ObjectField","ObjectInput","RedshiftConfig","Security","SnowflakeConfig","Source","SourceInput","Sync","SyncInput"]

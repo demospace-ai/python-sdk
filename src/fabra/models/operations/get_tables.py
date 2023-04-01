@@ -9,16 +9,10 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetTablesQueryParams:
+class GetTablesRequest:
     
     connection_id: int = dataclasses.field(metadata={'query_param': { 'field_name': 'connectionID', 'style': 'form', 'explode': True }})  
     namespace: str = dataclasses.field(metadata={'query_param': { 'field_name': 'namespace', 'style': 'form', 'explode': True }})  
-    
-
-@dataclasses.dataclass
-class GetTablesRequest:
-    
-    query_params: GetTablesQueryParams = dataclasses.field()  
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

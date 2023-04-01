@@ -2,7 +2,7 @@
 
 import requests as requests_http
 from . import utils
-from fabra.models import operations
+from fabra.models import operations, shared
 from typing import Optional
 
 class Sync:
@@ -22,7 +22,7 @@ class Sync:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
-    def create_sync(self, request: operations.CreateSyncRequest) -> operations.CreateSyncResponse:
+    def create_sync(self, request: shared.SyncInput) -> operations.CreateSyncResponse:
         r"""Create a new sync"""
         base_url = self._server_url
         

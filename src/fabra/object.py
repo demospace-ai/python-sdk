@@ -2,7 +2,7 @@
 
 import requests as requests_http
 from . import utils
-from fabra.models import operations
+from fabra.models import operations, shared
 from typing import Optional
 
 class Object:
@@ -22,7 +22,7 @@ class Object:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
-    def create_object(self, request: operations.CreateObjectRequest) -> operations.CreateObjectResponse:
+    def create_object(self, request: shared.ObjectInput) -> operations.CreateObjectResponse:
         r"""Create a new object"""
         base_url = self._server_url
         

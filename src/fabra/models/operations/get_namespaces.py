@@ -8,15 +8,9 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetNamespacesQueryParams:
-    
-    connection_id: int = dataclasses.field(metadata={'query_param': { 'field_name': 'connectionID', 'style': 'form', 'explode': True }})  
-    
-
-@dataclasses.dataclass
 class GetNamespacesRequest:
     
-    query_params: GetNamespacesQueryParams = dataclasses.field()  
+    connection_id: int = dataclasses.field(metadata={'query_param': { 'field_name': 'connectionID', 'style': 'form', 'explode': True }})  
     
 
 @dataclasses.dataclass

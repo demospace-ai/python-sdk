@@ -22,7 +22,7 @@ class LinkToken:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
-    def create_link_token(self, request: operations.CreateLinkTokenRequest) -> operations.CreateLinkTokenResponse:
+    def create_link_token(self, request: shared.CreateLinkTokenRequest) -> operations.CreateLinkTokenResponse:
         r"""Create a new link token"""
         base_url = self._server_url
         

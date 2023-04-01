@@ -28,7 +28,7 @@ class Connection:
         
         url = base_url.removesuffix('/') + '/connection/namespaces'
         
-        query_params = utils.get_query_params(operations.GetNamespacesQueryParams, request.query_params)
+        query_params = utils.get_query_params(operations.GetNamespacesRequest, request)
         
         client = self._security_client
         
@@ -52,7 +52,7 @@ class Connection:
         
         url = base_url.removesuffix('/') + '/connection/schema'
         
-        query_params = utils.get_query_params(operations.GetSchemaQueryParams, request.query_params)
+        query_params = utils.get_query_params(operations.GetSchemaRequest, request)
         
         client = self._security_client
         
@@ -76,7 +76,7 @@ class Connection:
         
         url = base_url.removesuffix('/') + '/connection/tables'
         
-        query_params = utils.get_query_params(operations.GetTablesQueryParams, request.query_params)
+        query_params = utils.get_query_params(operations.GetTablesRequest, request)
         
         client = self._security_client
         

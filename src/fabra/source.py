@@ -2,7 +2,7 @@
 
 import requests as requests_http
 from . import utils
-from fabra.models import operations
+from fabra.models import operations, shared
 from typing import Optional
 
 class Source:
@@ -22,7 +22,7 @@ class Source:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
-    def create_source(self, request: operations.CreateSourceRequest) -> operations.CreateSourceResponse:
+    def create_source(self, request: shared.SourceInput) -> operations.CreateSourceResponse:
         r"""Create a new source"""
         base_url = self._server_url
         
