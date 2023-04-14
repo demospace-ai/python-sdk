@@ -33,8 +33,8 @@ class Fabra:
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "0.12.3"
-    _gen_version: str = "2.17.9"
+    _sdk_version: str = "0.13.0"
+    _gen_version: str = "2.18.0"
 
     def __init__(self,
                  security: shared.Security = None,
