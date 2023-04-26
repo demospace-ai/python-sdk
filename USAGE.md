@@ -1,7 +1,7 @@
 <!-- Start SDK Example Usage -->
 ```python
 import fabra
-from fabra.models import operations, shared
+from fabra.models import operations
 
 s = fabra.Fabra(
     security=shared.Security(
@@ -13,7 +13,7 @@ s = fabra.Fabra(
 req = operations.GetNamespacesRequest(
     connection_id=548814,
 )
-    
+
 res = s.connection.get_namespaces(req)
 
 if res.namespaces is not None:

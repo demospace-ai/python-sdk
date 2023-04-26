@@ -49,4 +49,11 @@ src/fabra/models/shared/fieldmapping.py
 src/fabra/models/shared/syncinput.py
 src/fabra/models/shared/security.py
 src/fabra/models/shared/__init__.py
+docs/fabra/README.md
+docs/connection/README.md
+docs/destination/README.md
+docs/linktoken/README.md
+docs/object/README.md
+docs/source/README.md
+docs/sync/README.md
 USAGE.md
