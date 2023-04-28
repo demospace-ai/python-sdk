@@ -14,15 +14,20 @@ from typing import Optional
 class CreateSource200ApplicationJSON:
     r"""Successfully created source"""
     
-    source: Optional[shared_source.Source] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})  
+    source: Optional[shared_source.Source] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
+
     
 
 @dataclasses.dataclass
 class CreateSourceResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     create_source_200_application_json_object: Optional[CreateSource200ApplicationJSON] = dataclasses.field(default=None)
-    r"""Successfully created source"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Successfully created source"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

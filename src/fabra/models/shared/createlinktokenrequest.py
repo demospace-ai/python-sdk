@@ -10,5 +10,6 @@ from fabra import utils
 @dataclasses.dataclass
 class CreateLinkTokenRequest:
     
-    end_customer_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_customer_id') }})  
+    end_customer_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_customer_id') }})
+
     

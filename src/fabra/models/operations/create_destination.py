@@ -14,15 +14,20 @@ from typing import Optional
 class CreateDestination200ApplicationJSON:
     r"""Successfully created destination"""
     
-    destination: Optional[shared_destination.Destination] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('destination'), 'exclude': lambda f: f is None }})  
+    destination: Optional[shared_destination.Destination] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('destination'), 'exclude': lambda f: f is None }})
+
     
 
 @dataclasses.dataclass
 class CreateDestinationResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     create_destination_200_application_json_object: Optional[CreateDestination200ApplicationJSON] = dataclasses.field(default=None)
-    r"""Successfully created destination"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Successfully created destination"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

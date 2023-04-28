@@ -16,10 +16,16 @@ from typing import Optional
 @dataclasses.dataclass
 class DestinationInput:
     
-    connection_type: shared_connectiontype_enum.ConnectionTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connection_type') }})  
-    display_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_name') }})  
-    bigquery_config: Optional[shared_bigqueryconfig.BigQueryConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bigquery_config'), 'exclude': lambda f: f is None }})  
-    mongodb_config: Optional[shared_mongodbconfig.MongoDbConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mongodb_config'), 'exclude': lambda f: f is None }})  
-    redshift_config: Optional[shared_redshiftconfig.RedshiftConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('redshift_config'), 'exclude': lambda f: f is None }})  
-    snowflake_config: Optional[shared_snowflakeconfig.SnowflakeConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('snowflake_config'), 'exclude': lambda f: f is None }})  
+    connection_type: shared_connectiontype_enum.ConnectionTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connection_type') }})
+
+    display_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_name') }})
+
+    bigquery_config: Optional[shared_bigqueryconfig.BigQueryConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bigquery_config'), 'exclude': lambda f: f is None }})
+
+    mongodb_config: Optional[shared_mongodbconfig.MongoDbConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mongodb_config'), 'exclude': lambda f: f is None }})
+
+    redshift_config: Optional[shared_redshiftconfig.RedshiftConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('redshift_config'), 'exclude': lambda f: f is None }})
+
+    snowflake_config: Optional[shared_snowflakeconfig.SnowflakeConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('snowflake_config'), 'exclude': lambda f: f is None }})
+
     
