@@ -13,5 +13,4 @@ class CreateLinkTokenResponse:
     r"""Successfully created link token"""
     
     link_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('link_token'), 'exclude': lambda f: f is None }})
-
     

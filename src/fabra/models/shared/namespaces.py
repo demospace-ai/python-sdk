@@ -13,5 +13,4 @@ class Namespaces:
     r"""Successfully fetched namespaces"""
     
     namespaces: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('namespaces'), 'exclude': lambda f: f is None }})
-
     

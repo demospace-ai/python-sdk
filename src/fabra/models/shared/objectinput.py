@@ -13,16 +13,10 @@ from typing import Optional
 class ObjectInput:
     
     destination_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('destination_id') }})
-
     display_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_name') }})
-
     end_customer_id_field: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_customer_id_field') }})
-
     r"""This is where Fabra will insert the End Customer ID specified when creating a source."""
     namespace: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('namespace') }})
-
     table_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('table_name') }})
-
     object_fields: Optional[list[shared_objectfield.ObjectField]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('object_fields'), 'exclude': lambda f: f is None }})
-
     
