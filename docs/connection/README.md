@@ -56,8 +56,8 @@ s = fabra.Fabra(
 
 req = operations.GetSchemaRequest(
     connection_id=715190,
-    namespace="quibusdam",
-    table_name="unde",
+    namespace='quibusdam',
+    table_name='unde',
 )
 
 res = s.connection.get_schema(req)
@@ -85,7 +85,7 @@ s = fabra.Fabra(
 
 req = operations.GetTablesRequest(
     connection_id=857946,
-    namespace="corrupti",
+    namespace='corrupti',
 )
 
 res = s.connection.get_tables(req)

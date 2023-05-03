@@ -26,7 +26,7 @@ s = fabra.Fabra(
 
 
 req = shared.CreateLinkTokenRequest(
-    end_customer_id="123",
+    end_customer_id='123',
 )
 
 res = s.link_token.create_link_token(req)
