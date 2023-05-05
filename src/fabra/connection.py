@@ -22,6 +22,7 @@ class Connection:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def get_namespaces(self, request: operations.GetNamespacesRequest) -> operations.GetNamespacesResponse:
         r"""Get all namespaces"""
         base_url = self._server_url
@@ -46,6 +47,7 @@ class Connection:
 
         return res
 
+    
     def get_schema(self, request: operations.GetSchemaRequest) -> operations.GetSchemaResponse:
         r"""Get schema for table"""
         base_url = self._server_url
@@ -70,6 +72,7 @@ class Connection:
 
         return res
 
+    
     def get_tables(self, request: operations.GetTablesRequest) -> operations.GetTablesResponse:
         r"""Get all tables"""
         base_url = self._server_url

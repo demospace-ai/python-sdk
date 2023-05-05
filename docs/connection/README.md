@@ -26,7 +26,6 @@ s = fabra.Fabra(
     ),
 )
 
-
 req = operations.GetNamespacesRequest(
     connection_id=592845,
 )
@@ -52,7 +51,6 @@ s = fabra.Fabra(
         api_key_auth="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.GetSchemaRequest(
     connection_id=715190,
@@ -81,7 +79,6 @@ s = fabra.Fabra(
         api_key_auth="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.GetTablesRequest(
     connection_id=857946,

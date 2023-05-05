@@ -25,7 +25,6 @@ s = fabra.Fabra(
     ),
 )
 
-
 req = shared.ObjectInput(
     destination_id=2,
     display_name='BigQuery',

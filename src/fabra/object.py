@@ -22,6 +22,7 @@ class Object:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def create_object(self, request: shared.ObjectInput) -> operations.CreateObjectResponse:
         r"""Create a new object"""
         base_url = self._server_url
@@ -51,6 +52,7 @@ class Object:
 
         return res
 
+    
     def get_objects(self) -> operations.GetObjectsResponse:
         r"""Get all objects"""
         base_url = self._server_url

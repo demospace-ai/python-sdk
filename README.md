@@ -26,7 +26,6 @@ s = fabra.Fabra(
     ),
 )
 
-
 req = operations.GetNamespacesRequest(
     connection_id=548814,
 )

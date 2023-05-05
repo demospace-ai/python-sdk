@@ -22,6 +22,7 @@ class Sync:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def create_sync(self, request: shared.SyncInput) -> operations.CreateSyncResponse:
         r"""Create a new sync"""
         base_url = self._server_url
@@ -51,6 +52,7 @@ class Sync:
 
         return res
 
+    
     def get_syncs(self) -> operations.GetSyncsResponse:
         r"""Get all syncs"""
         base_url = self._server_url

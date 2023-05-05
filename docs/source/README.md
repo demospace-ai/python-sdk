@@ -25,7 +25,6 @@ s = fabra.Fabra(
     ),
 )
 
-
 req = shared.SourceInput(
     bigquery_config=shared.BigQueryConfig(
         credentials='Paste JSON from GCP',

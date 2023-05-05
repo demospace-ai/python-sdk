@@ -25,7 +25,6 @@ s = fabra.Fabra(
     ),
 )
 
-
 req = shared.SyncInput(
     cursor_field='updated_at',
     custom_join='select * from events join additional_properties on events.id = additional_properties.event_id;',

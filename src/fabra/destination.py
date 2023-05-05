@@ -22,6 +22,7 @@ class Destination:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def create_destination(self, request: shared.DestinationInput) -> operations.CreateDestinationResponse:
         r"""Create a new destination"""
         base_url = self._server_url
@@ -51,6 +52,7 @@ class Destination:
 
         return res
 
+    
     def get_destinations(self) -> operations.GetDestinationsResponse:
         r"""Get all destinations"""
         base_url = self._server_url
