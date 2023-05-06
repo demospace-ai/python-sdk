@@ -18,7 +18,7 @@ class SourceInput:
     
     connection_type: shared_connectiontype_enum.ConnectionTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connection_type') }})
     display_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_name') }})
-    end_customer_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_customer_id') }})
+    end_customer_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_customer_id') }})
     bigquery_config: Optional[shared_bigqueryconfig.BigQueryConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bigquery_config'), 'exclude': lambda f: f is None }})
     mongodb_config: Optional[shared_mongodbconfig.MongoDbConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mongodb_config'), 'exclude': lambda f: f is None }})
     redshift_config: Optional[shared_redshiftconfig.RedshiftConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('redshift_config'), 'exclude': lambda f: f is None }})

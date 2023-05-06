@@ -32,7 +32,7 @@ req = shared.SourceInput(
     ),
     connection_type=shared.ConnectionTypeEnum.BIGQUERY,
     display_name='Frontend Events',
-    end_customer_id=123,
+    end_customer_id='abcd-1234-efgh-5678',
     mongodb_config=shared.MongoDbConfig(
         connection_options='retryWrites=true&w=majority',
         host='examplecluster.abc123.mongodb.net',
