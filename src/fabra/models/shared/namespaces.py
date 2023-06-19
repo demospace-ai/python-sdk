@@ -9,8 +9,8 @@ from typing import Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CreateLinkTokenResponse:
-    r"""Successfully created link token"""
+class Namespaces:
+    r"""Successfully fetched namespaces"""
     
-    link_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('link_token'), 'exclude': lambda f: f is None }})
+    namespaces: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('namespaces'), 'exclude': lambda f: f is None }})
     
