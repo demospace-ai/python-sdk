@@ -10,7 +10,7 @@
 ## SDK Installation
 
 ```bash
-pip install git+<UNSET>.git
+pip install fabra
 ```
 <!-- End SDK Installation -->
 
