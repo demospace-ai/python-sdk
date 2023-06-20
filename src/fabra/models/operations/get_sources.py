@@ -10,19 +10,22 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetSources200ApplicationJSON:
     r"""Successfully fetched sources"""
-    
     sources: Optional[list[shared_source.Source]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sources'), 'exclude': lambda f: f is None }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetSourcesResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_sources_200_application_json_object: Optional[GetSources200ApplicationJSON] = dataclasses.field(default=None)
     r"""Successfully fetched sources"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

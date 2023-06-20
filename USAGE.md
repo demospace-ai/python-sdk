@@ -5,7 +5,7 @@ from fabra.models import operations
 
 s = fabra.Fabra(
     security=shared.Security(
-        api_key_auth="YOUR_API_KEY_HERE",
+        api_key_auth="",
     ),
 )
 

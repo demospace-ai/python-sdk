@@ -1,0 +1,11 @@
+# CreateLinkTokenResponse
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `content_type`                                                                             | *str*                                                                                      | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `create_link_token_response`                                                               | [Optional[shared.CreateLinkTokenResponse]](../../models/shared/createlinktokenresponse.md) | :heavy_minus_sign:                                                                         | Successfully created link token                                                            |
+| `status_code`                                                                              | *int*                                                                                      | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `raw_response`                                                                             | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response)      | :heavy_minus_sign:                                                                         | N/A                                                                                        |
