@@ -2,20 +2,21 @@
 
 from .bigqueryconfig import *
 from .connection import *
-from .connectiontype_enum import *
+from .connectiontype import *
 from .createlinktokenrequest import *
 from .createlinktokenresponse import *
 from .destination import *
 from .destinationinput import *
 from .field import *
 from .fieldmapping import *
-from .fieldtype_enum import *
-from .frequencyunits_enum import *
+from .fieldtype import *
+from .frequencyunits import *
 from .mongodbconfig import *
 from .namespaces import *
 from .object import *
 from .objectfield import *
 from .objectinput import *
+from .queryfilter import *
 from .redshiftconfig import *
 from .security import *
 from .snowflakeconfig import *
@@ -24,4 +25,4 @@ from .sourceinput import *
 from .sync import *
 from .syncinput import *
 
-__all__ = ["BigQueryConfig","Connection","ConnectionTypeEnum","CreateLinkTokenRequest","CreateLinkTokenResponse","Destination","DestinationInput","Field","FieldMapping","FieldTypeEnum","FrequencyUnitsEnum","MongoDbConfig","Namespaces","Object","ObjectField","ObjectInput","RedshiftConfig","Security","SnowflakeConfig","Source","SourceInput","Sync","SyncInput"]
+__all__ = ["BigQueryConfig","Connection","ConnectionType","CreateLinkTokenRequest","CreateLinkTokenResponse","Destination","DestinationInput","Field","FieldMapping","FieldType","FrequencyUnits","MongoDbConfig","Namespaces","Object","ObjectField","ObjectInput","QueryFilter","RedshiftConfig","Security","SnowflakeConfig","Source","SourceInput","Sync","SyncInput"]

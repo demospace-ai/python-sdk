@@ -10,19 +10,22 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateSync200ApplicationJSON:
     r"""Successfully created sync"""
-    
     sync: Optional[shared_sync.Sync] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sync'), 'exclude': lambda f: f is None }})
     
 
+
+
+
 @dataclasses.dataclass
 class CreateSyncResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     create_sync_200_application_json_object: Optional[CreateSync200ApplicationJSON] = dataclasses.field(default=None)
     r"""Successfully created sync"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+
