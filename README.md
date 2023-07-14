@@ -16,9 +16,11 @@ pip install fabra
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
+
+
 ```python
 import fabra
-from fabra.models import operations
+from fabra.models import operations, shared
 
 s = fabra.Fabra(
     security=shared.Security(

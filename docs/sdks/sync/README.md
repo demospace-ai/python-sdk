@@ -84,7 +84,7 @@ Get all syncs
 
 ```python
 import fabra
-
+from fabra.models import shared
 
 s = fabra.Fabra(
     security=shared.Security(

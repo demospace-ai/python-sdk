@@ -18,7 +18,7 @@ Get all namespaces
 
 ```python
 import fabra
-from fabra.models import operations
+from fabra.models import operations, shared
 
 s = fabra.Fabra(
     security=shared.Security(
@@ -56,7 +56,7 @@ Get schema for table
 
 ```python
 import fabra
-from fabra.models import operations
+from fabra.models import operations, shared
 
 s = fabra.Fabra(
     security=shared.Security(
@@ -96,7 +96,7 @@ Get all tables
 
 ```python
 import fabra
-from fabra.models import operations
+from fabra.models import operations, shared
 
 s = fabra.Fabra(
     security=shared.Security(

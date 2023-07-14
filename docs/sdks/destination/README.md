@@ -81,7 +81,7 @@ Get all destinations
 
 ```python
 import fabra
-
+from fabra.models import shared
 
 s = fabra.Fabra(
     security=shared.Security(
