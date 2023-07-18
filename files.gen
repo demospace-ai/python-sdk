@@ -11,6 +11,7 @@ pylintrc
 setup.py
 src/fabra/__init__.py
 src/fabra/models/__init__.py
+src/fabra/models/errors/sdkerror.py
 src/fabra/utils/__init__.py
 src/fabra/utils/retries.py
 src/fabra/utils/utils.py
@@ -53,6 +54,7 @@ src/fabra/models/shared/fieldmapping.py
 src/fabra/models/shared/syncinput.py
 src/fabra/models/shared/security.py
 src/fabra/models/shared/__init__.py
+src/fabra/models/errors/__init__.py
 docs/sdks/fabra/README.md
 docs/sdks/connection/README.md
 docs/sdks/customerdata/README.md

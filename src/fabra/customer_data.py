@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from fabra import utils
-from fabra.models import operations
+from fabra.models import errors, operations
 from typing import Optional
 
 class CustomerData:
@@ -37,6 +37,8 @@ class CustomerData:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.QueryObject200ApplicationJSON])
                 res.query_object_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 500]:
             pass
 

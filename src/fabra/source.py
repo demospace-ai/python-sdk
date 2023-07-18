@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from fabra import utils
-from fabra.models import operations, shared
+from fabra.models import errors, operations, shared
 from typing import Optional
 
 class Source:
@@ -38,6 +38,8 @@ class Source:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.CreateSource200ApplicationJSON])
                 res.create_source_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 500]:
             pass
 
@@ -64,6 +66,8 @@ class Source:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetSources200ApplicationJSON])
                 res.get_sources_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 500]:
             pass
 
