@@ -27,22 +27,10 @@ req = operations.QueryObjectRequest(
                 field_name='user_id',
                 field_value='2',
             ),
-            shared.QueryFilter(
-                field_name='user_id',
-                field_value='2',
-            ),
-            shared.QueryFilter(
-                field_name='user_id',
-                field_value='2',
-            ),
-            shared.QueryFilter(
-                field_name='user_id',
-                field_value='2',
-            ),
         ],
     ),
-    end_customer_id='vel',
-    object_id=623564,
+    end_customer_id='illum',
+    object_id=423655,
 )
 
 res = s.customer_data.query_object(req)

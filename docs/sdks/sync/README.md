@@ -36,18 +36,6 @@ req = shared.SyncInput(
             destination_field_name='event',
             source_field_name='event_name',
         ),
-        shared.FieldMapping(
-            destination_field_name='event',
-            source_field_name='event_name',
-        ),
-        shared.FieldMapping(
-            destination_field_name='event',
-            source_field_name='event_name',
-        ),
-        shared.FieldMapping(
-            destination_field_name='event',
-            source_field_name='event_name',
-        ),
     ],
     frequency=30,
     frequency_units=shared.FrequencyUnits.HOURS,

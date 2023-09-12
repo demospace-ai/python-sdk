@@ -30,7 +30,7 @@ req = shared.SourceInput(
         credentials='Paste JSON from GCP',
         location='us-west1',
     ),
-    connection_type=shared.ConnectionType.SNOWFLAKE,
+    connection_type=shared.ConnectionType.REDSHIFT,
     display_name='Frontend Events',
     end_customer_id='abcd-1234-efgh-5678',
     mongodb_config=shared.MongoDbConfig(

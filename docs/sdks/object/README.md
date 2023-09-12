@@ -31,16 +31,12 @@ req = shared.ObjectInput(
     display_name='BigQuery',
     end_customer_id_field='end_customer_id',
     frequency=30,
-    frequency_units=shared.FrequencyUnits.HOURS,
+    frequency_units=shared.FrequencyUnits.DAYS,
     namespace='bigquery_dataset',
     object_fields=[
         shared.ObjectField(
             name='event_name',
             type=shared.FieldType.INTEGER,
-        ),
-        shared.ObjectField(
-            name='event_name',
-            type=shared.FieldType.BOOLEAN,
         ),
     ],
     primary_key='event_id',
