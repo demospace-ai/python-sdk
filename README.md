@@ -43,36 +43,36 @@ if res.namespaces is not None:
 ## Available Resources and Operations
 
 
-### [connection](docs/sdks/connection/README.md)
+### [Connection](docs/sdks/connection/README.md)
 
 * [get_namespaces](docs/sdks/connection/README.md#get_namespaces) - Get all namespaces
 * [get_schema](docs/sdks/connection/README.md#get_schema) - Get schema for table
 * [get_tables](docs/sdks/connection/README.md#get_tables) - Get all tables
 
-### [customer_data](docs/sdks/customerdata/README.md)
+### [CustomerData](docs/sdks/customerdata/README.md)
 
 * [query_object](docs/sdks/customerdata/README.md#query_object) - Query object record for customer
 
-### [destination](docs/sdks/destination/README.md)
+### [Destination](docs/sdks/destination/README.md)
 
 * [create_destination](docs/sdks/destination/README.md#create_destination) - Create a new destination
 * [get_destinations](docs/sdks/destination/README.md#get_destinations) - Get all destinations
 
-### [link_token](docs/sdks/linktoken/README.md)
+### [LinkToken](docs/sdks/linktoken/README.md)
 
 * [create_link_token](docs/sdks/linktoken/README.md#create_link_token) - Create a new link token
 
-### [object](docs/sdks/object/README.md)
+### [Object](docs/sdks/object/README.md)
 
 * [create_object](docs/sdks/object/README.md#create_object) - Create a new object
 * [get_objects](docs/sdks/object/README.md#get_objects) - Get all objects
 
-### [source](docs/sdks/source/README.md)
+### [Source](docs/sdks/source/README.md)
 
 * [create_source](docs/sdks/source/README.md#create_source) - Create a new source
 * [get_sources](docs/sdks/source/README.md#get_sources) - Get all sources
 
-### [sync](docs/sdks/sync/README.md)
+### [Sync](docs/sdks/sync/README.md)
 
 * [create_sync](docs/sdks/sync/README.md#create_sync) - Create a new sync
 * [get_syncs](docs/sdks/sync/README.md#get_syncs) - Get all syncs

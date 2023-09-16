@@ -1,4 +1,4 @@
-# link_token
+# LinkToken
 
 ## Overview
 

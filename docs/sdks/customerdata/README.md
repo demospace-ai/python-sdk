@@ -1,4 +1,4 @@
-# customer_data
+# CustomerData
 
 ### Available Operations
 
