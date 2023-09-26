@@ -29,8 +29,8 @@ req = operations.QueryObjectRequest(
             ),
         ],
     ),
-    end_customer_id='illum',
-    object_id=423655,
+    end_customer_id='vel',
+    object_id=623564,
 )
 
 res = s.customer_data.query_object(req)

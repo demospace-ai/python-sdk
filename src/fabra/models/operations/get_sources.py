@@ -23,9 +23,12 @@ class GetSources200ApplicationJSON:
 @dataclasses.dataclass
 class GetSourcesResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_sources_200_application_json_object: Optional[GetSources200ApplicationJSON] = dataclasses.field(default=None)
     r"""Successfully fetched sources"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

@@ -27,7 +27,7 @@ s = fabra.Fabra(
 )
 
 req = operations.GetNamespacesRequest(
-    connection_id=592845,
+    connection_id=715190,
 )
 
 res = s.connection.get_namespaces(req)
@@ -65,9 +65,9 @@ s = fabra.Fabra(
 )
 
 req = operations.GetSchemaRequest(
-    connection_id=715190,
-    namespace='quibusdam',
-    table_name='unde',
+    connection_id=844266,
+    namespace='unde',
+    table_name='nulla',
 )
 
 res = s.connection.get_schema(req)
@@ -105,8 +105,8 @@ s = fabra.Fabra(
 )
 
 req = operations.GetTablesRequest(
-    connection_id=857946,
-    namespace='corrupti',
+    connection_id=544883,
+    namespace='illum',
 )
 
 res = s.connection.get_tables(req)
