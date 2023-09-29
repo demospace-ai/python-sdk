@@ -671,3 +671,13 @@ Based on:
 - [python v0.42.1] .
 ### Releases
 - [PyPI v0.42.1] https://pypi.org/project/fabra/0.42.1 - .
+
+## 2023-09-29 00:05:36
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 https://fabra-io.github.io/docs/openapi.yaml
+- Speakeasy CLI 1.91.3 (2.139.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v0.43.0] .
+### Releases
+- [PyPI v0.43.0] https://pypi.org/project/fabra/0.43.0 - .

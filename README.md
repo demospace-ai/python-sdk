@@ -27,7 +27,7 @@ s = fabra.Fabra(
 )
 
 req = operations.GetNamespacesRequest(
-    connection_id=592845,
+    connection_id=995455,
 )
 
 res = s.connection.get_namespaces(req)

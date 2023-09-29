@@ -5,6 +5,6 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `connection_id`    | *int*              | :heavy_check_mark: | N/A                |
-| `namespace`        | *str*              | :heavy_check_mark: | N/A                |
-| `table_name`       | *str*              | :heavy_check_mark: | N/A                |
+| `connection_id`    | *Optional[int]*    | :heavy_check_mark: | N/A                |
+| `namespace`        | *Optional[str]*    | :heavy_check_mark: | N/A                |
+| `table_name`       | *Optional[str]*    | :heavy_check_mark: | N/A                |

@@ -32,7 +32,7 @@ req = shared.ObjectInput(
     display_name='BigQuery',
     end_customer_id_field='end_customer_id',
     frequency=30,
-    frequency_units=shared.FrequencyUnits.HOURS,
+    frequency_units=shared.FrequencyUnits.MINUTES,
     namespace='bigquery_dataset',
     object_fields=[
         shared.ObjectField(

@@ -31,7 +31,7 @@ req = shared.DestinationInput(
         credentials='Paste JSON from GCP',
         location='us-west1',
     ),
-    connection_type=shared.ConnectionType.MONGODB,
+    connection_type=shared.ConnectionType.SNOWFLAKE,
     display_name='BigQuery',
     mongodb_config=shared.MongoDbConfig(
         connection_options='retryWrites=true&w=majority',

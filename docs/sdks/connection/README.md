@@ -28,7 +28,7 @@ s = fabra.Fabra(
 )
 
 req = operations.GetNamespacesRequest(
-    connection_id=715190,
+    connection_id=995455,
 )
 
 res = s.connection.get_namespaces(req)
@@ -66,9 +66,9 @@ s = fabra.Fabra(
 )
 
 req = operations.GetSchemaRequest(
-    connection_id=844266,
-    namespace='unde',
-    table_name='nulla',
+    connection_id=367941,
+    namespace='Granite East project',
+    table_name='Orchestrator Personal Garden',
 )
 
 res = s.connection.get_schema(req)
@@ -106,8 +106,8 @@ s = fabra.Fabra(
 )
 
 req = operations.GetTablesRequest(
-    connection_id=544883,
-    namespace='illum',
+    connection_id=820803,
+    namespace='baby Hatchback',
 )
 
 res = s.connection.get_tables(req)
