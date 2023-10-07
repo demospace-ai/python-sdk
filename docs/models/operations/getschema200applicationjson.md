@@ -5,6 +5,6 @@ Successfully fetched schema
 
 ## Fields
 
-| Field                                                  | Type                                                   | Required                                               | Description                                            |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| `schema`                                               | list[[shared.Field](undefined/models/shared/field.md)] | :heavy_minus_sign:                                     | N/A                                                    |
+| Field                                                           | Type                                                            | Required                                                        | Description                                                     | Example                                                         |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `schema`                                                        | list[[shared.Field](undefined/models/shared/field.md)]          | :heavy_minus_sign:                                              | N/A                                                             | [object Object],[object Object],[object Object],[object Object] |

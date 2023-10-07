@@ -37,7 +37,6 @@ req = shared.ObjectInput(
     object_fields=[
         shared.ObjectField(
             name='event_name',
-            type=shared.FieldType.TIMESTAMP,
         ),
     ],
     primary_key='event_id',

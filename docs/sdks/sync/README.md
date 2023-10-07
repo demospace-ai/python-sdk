@@ -39,7 +39,6 @@ req = shared.SyncInput(
         ),
     ],
     frequency=30,
-    frequency_units=shared.FrequencyUnits.MINUTES,
     namespace='end_customer_bigquery_dataset',
     object_id=3,
     primary_key='event_id',
