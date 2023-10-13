@@ -47,6 +47,7 @@ res = s.object.create_object(req)
 
 if res.create_object_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -82,6 +83,7 @@ res = s.object.get_objects()
 
 if res.get_objects_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 

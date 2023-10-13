@@ -35,6 +35,7 @@ res = s.connection.get_namespaces(req)
 
 if res.namespaces is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -75,6 +76,7 @@ res = s.connection.get_schema(req)
 
 if res.get_schema_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -114,6 +116,7 @@ res = s.connection.get_tables(req)
 
 if res.get_tables_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

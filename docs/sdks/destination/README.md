@@ -60,6 +60,7 @@ res = s.destination.create_destination(req)
 
 if res.create_destination_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -95,6 +96,7 @@ res = s.destination.get_destinations()
 
 if res.get_destinations_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 

@@ -61,6 +61,7 @@ res = s.source.create_source(req)
 
 if res.create_source_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -96,6 +97,7 @@ res = s.source.get_sources()
 
 if res.get_sources_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 

@@ -50,6 +50,7 @@ res = s.sync.create_sync(req)
 
 if res.create_sync_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -85,6 +86,7 @@ res = s.sync.get_syncs()
 
 if res.get_syncs_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 

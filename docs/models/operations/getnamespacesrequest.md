@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `connection_id`    | *Optional[int]*    | :heavy_check_mark: | N/A                |
+| `connection_id`    | *int*              | :heavy_check_mark: | N/A                |
