@@ -7,4 +7,4 @@ Successfully fetched syncs
 
 | Field                                            | Type                                             | Required                                         | Description                                      |
 | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
-| `syncs`                                          | list[[shared.Sync](../../models/shared/sync.md)] | :heavy_minus_sign:                               | N/A                                              |
+| `syncs`                                          | List[[shared.Sync](../../models/shared/sync.md)] | :heavy_minus_sign:                               | N/A                                              |

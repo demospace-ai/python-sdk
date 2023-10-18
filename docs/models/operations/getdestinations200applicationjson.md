@@ -7,4 +7,4 @@ Successfully fetched destinations
 
 | Field                                                          | Type                                                           | Required                                                       | Description                                                    |
 | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| `destinations`                                                 | list[[shared.Destination](../../models/shared/destination.md)] | :heavy_minus_sign:                                             | N/A                                                            |
+| `destinations`                                                 | List[[shared.Destination](../../models/shared/destination.md)] | :heavy_minus_sign:                                             | N/A                                                            |

@@ -7,12 +7,10 @@ from ..shared import namespaces as shared_namespaces
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetNamespacesRequest:
     connection_id: int = dataclasses.field(metadata={'query_param': { 'field_name': 'connectionID', 'style': 'form', 'explode': True }})
     
-
 
 
 

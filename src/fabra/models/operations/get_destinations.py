@@ -6,17 +6,15 @@ import requests as requests_http
 from ..shared import destination as shared_destination
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetDestinations200ApplicationJSON:
     r"""Successfully fetched destinations"""
-    destinations: Optional[list[shared_destination.Destination]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('destinations'), 'exclude': lambda f: f is None }})
+    destinations: Optional[List[shared_destination.Destination]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('destinations'), 'exclude': lambda f: f is None }})
     
-
 
 
 

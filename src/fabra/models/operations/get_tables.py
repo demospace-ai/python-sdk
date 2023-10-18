@@ -5,8 +5,7 @@ import dataclasses
 import requests as requests_http
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -18,13 +17,11 @@ class GetTablesRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetTables200ApplicationJSON:
     r"""Successfully fetched tables"""
-    tables: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tables'), 'exclude': lambda f: f is None }})
+    tables: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tables'), 'exclude': lambda f: f is None }})
     
-
 
 
 

@@ -10,13 +10,11 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateSync200ApplicationJSON:
     r"""Successfully created sync"""
     sync: Optional[shared_sync.Sync] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sync'), 'exclude': lambda f: f is None }})
     
-
 
 
 

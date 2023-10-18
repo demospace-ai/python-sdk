@@ -6,16 +6,14 @@ import requests as requests_http
 from ..shared import queryfilter as shared_queryfilter
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class QueryObjectRequestBody:
-    filters: Optional[list[shared_queryfilter.QueryFilter]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filters'), 'exclude': lambda f: f is None }})
+    filters: Optional[List[shared_queryfilter.QueryFilter]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filters'), 'exclude': lambda f: f is None }})
     
-
 
 
 
@@ -29,7 +27,6 @@ class QueryObjectRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class QueryObject200ApplicationJSONExampleField3:
     nested_field_1: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nested_field_1'), 'exclude': lambda f: f is None }})
@@ -39,7 +36,6 @@ class QueryObject200ApplicationJSONExampleField3:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class QueryObject200ApplicationJSON:
     r"""The response payload will match the schema you defined when creating the object"""
@@ -47,7 +43,6 @@ class QueryObject200ApplicationJSON:
     example_field_2: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('example_field_2'), 'exclude': lambda f: f is None }})
     example_field_3: Optional[QueryObject200ApplicationJSONExampleField3] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('example_field_3'), 'exclude': lambda f: f is None }})
     
-
 
 
 

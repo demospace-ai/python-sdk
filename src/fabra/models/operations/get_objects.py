@@ -6,17 +6,15 @@ import requests as requests_http
 from ..shared import object as shared_object
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetObjects200ApplicationJSON:
     r"""Successfully fetched objects"""
-    objects: Optional[list[shared_object.Object]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('objects'), 'exclude': lambda f: f is None }})
+    objects: Optional[List[shared_object.Object]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('objects'), 'exclude': lambda f: f is None }})
     
-
 
 
 

@@ -7,7 +7,6 @@ from ..shared import createlinktokenresponse as shared_createlinktokenresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class CreateLinkTokenResponse:
     content_type: str = dataclasses.field()
