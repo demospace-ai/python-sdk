@@ -30,8 +30,8 @@ req = operations.QueryObjectRequest(
             ),
         ],
     ),
-    end_customer_id='once',
-    object_id=819181,
+    end_customer_id='string',
+    object_id=906396,
 )
 
 res = s.customer_data.query_object(req)
