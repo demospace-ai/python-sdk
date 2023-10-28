@@ -1,4 +1,5 @@
-# object
+# Object
+(*object*)
 
 ## Overview
 
@@ -31,16 +32,11 @@ req = shared.ObjectInput(
     display_name='BigQuery',
     end_customer_id_field='end_customer_id',
     frequency=30,
-    frequency_units=shared.FrequencyUnits.HOURS,
+    frequency_units=shared.FrequencyUnits.MINUTES,
     namespace='bigquery_dataset',
     object_fields=[
         shared.ObjectField(
             name='event_name',
-            type=shared.FieldType.INTEGER,
-        ),
-        shared.ObjectField(
-            name='event_name',
-            type=shared.FieldType.BOOLEAN,
         ),
     ],
     primary_key='event_id',
@@ -51,6 +47,7 @@ res = s.object.create_object(req)
 
 if res.create_object_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -73,7 +70,7 @@ Get all objects
 
 ```python
 import fabra
-
+from fabra.models import shared
 
 s = fabra.Fabra(
     security=shared.Security(
@@ -86,6 +83,7 @@ res = s.object.get_objects()
 
 if res.get_objects_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 

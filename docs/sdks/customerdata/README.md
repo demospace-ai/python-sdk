@@ -1,4 +1,5 @@
-# customer_data
+# CustomerData
+(*customer_data*)
 
 ### Available Operations
 
@@ -27,28 +28,17 @@ req = operations.QueryObjectRequest(
                 field_name='user_id',
                 field_value='2',
             ),
-            shared.QueryFilter(
-                field_name='user_id',
-                field_value='2',
-            ),
-            shared.QueryFilter(
-                field_name='user_id',
-                field_value='2',
-            ),
-            shared.QueryFilter(
-                field_name='user_id',
-                field_value='2',
-            ),
         ],
     ),
-    end_customer_id='vel',
-    object_id=623564,
+    end_customer_id='string',
+    object_id=906396,
 )
 
 res = s.customer_data.query_object(req)
 
 if res.query_object_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

@@ -1,4 +1,5 @@
-# source
+# Source
+(*source*)
 
 ## Overview
 
@@ -30,7 +31,7 @@ req = shared.SourceInput(
         credentials='Paste JSON from GCP',
         location='us-west1',
     ),
-    connection_type=shared.ConnectionType.SNOWFLAKE,
+    connection_type=shared.ConnectionType.WEBHOOK,
     display_name='Frontend Events',
     end_customer_id='abcd-1234-efgh-5678',
     mongodb_config=shared.MongoDbConfig(
@@ -60,6 +61,7 @@ res = s.source.create_source(req)
 
 if res.create_source_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -82,7 +84,7 @@ Get all sources
 
 ```python
 import fabra
-
+from fabra.models import shared
 
 s = fabra.Fabra(
     security=shared.Security(
@@ -95,6 +97,7 @@ res = s.source.get_sources()
 
 if res.get_sources_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 

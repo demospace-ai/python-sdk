@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from fabra import utils
-from fabra.models import operations
+from fabra.models import errors, operations
 from typing import Optional
 
 class CustomerData:
@@ -20,11 +20,11 @@ class CustomerData:
         
         url = utils.generate_url(operations.QueryObjectRequest, base_url, '/customer/{endCustomerID}/object/{objectID}/record', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -37,6 +37,8 @@ class CustomerData:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.QueryObject200ApplicationJSON])
                 res.query_object_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 500]:
             pass
 

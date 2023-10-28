@@ -1,4 +1,5 @@
-# destination
+# Destination
+(*destination*)
 
 ## Overview
 
@@ -30,7 +31,7 @@ req = shared.DestinationInput(
         credentials='Paste JSON from GCP',
         location='us-west1',
     ),
-    connection_type=shared.ConnectionType.MONGODB,
+    connection_type=shared.ConnectionType.SNOWFLAKE,
     display_name='BigQuery',
     mongodb_config=shared.MongoDbConfig(
         connection_options='retryWrites=true&w=majority',
@@ -59,6 +60,7 @@ res = s.destination.create_destination(req)
 
 if res.create_destination_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -81,7 +83,7 @@ Get all destinations
 
 ```python
 import fabra
-
+from fabra.models import shared
 
 s = fabra.Fabra(
     security=shared.Security(
@@ -94,6 +96,7 @@ res = s.destination.get_destinations()
 
 if res.get_destinations_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 

@@ -1,4 +1,5 @@
-# connection
+# Connection
+(*connection*)
 
 ## Overview
 
@@ -18,7 +19,7 @@ Get all namespaces
 
 ```python
 import fabra
-from fabra.models import operations
+from fabra.models import operations, shared
 
 s = fabra.Fabra(
     security=shared.Security(
@@ -27,13 +28,14 @@ s = fabra.Fabra(
 )
 
 req = operations.GetNamespacesRequest(
-    connection_id=592845,
+    connection_id=995455,
 )
 
 res = s.connection.get_namespaces(req)
 
 if res.namespaces is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -56,7 +58,7 @@ Get schema for table
 
 ```python
 import fabra
-from fabra.models import operations
+from fabra.models import operations, shared
 
 s = fabra.Fabra(
     security=shared.Security(
@@ -65,15 +67,16 @@ s = fabra.Fabra(
 )
 
 req = operations.GetSchemaRequest(
-    connection_id=715190,
-    namespace='quibusdam',
-    table_name='unde',
+    connection_id=367941,
+    namespace='string',
+    table_name='string',
 )
 
 res = s.connection.get_schema(req)
 
 if res.get_schema_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -96,7 +99,7 @@ Get all tables
 
 ```python
 import fabra
-from fabra.models import operations
+from fabra.models import operations, shared
 
 s = fabra.Fabra(
     security=shared.Security(
@@ -105,14 +108,15 @@ s = fabra.Fabra(
 )
 
 req = operations.GetTablesRequest(
-    connection_id=857946,
-    namespace='corrupti',
+    connection_id=820803,
+    namespace='string',
 )
 
 res = s.connection.get_tables(req)
 
 if res.get_tables_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

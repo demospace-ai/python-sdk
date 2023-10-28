@@ -6,17 +6,16 @@ from ..shared import fieldmapping as shared_fieldmapping
 from ..shared import frequencyunits as shared_frequencyunits
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SyncInput:
     destination_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('destination_id') }})
     display_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_name') }})
     end_customer_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_customer_id') }})
-    field_mappings: list[shared_fieldmapping.FieldMapping] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('field_mappings') }})
+    field_mappings: List[shared_fieldmapping.FieldMapping] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('field_mappings') }})
     object_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('object_id') }})
     source_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source_id') }})
     cursor_field: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cursor_field'), 'exclude': lambda f: f is None }})

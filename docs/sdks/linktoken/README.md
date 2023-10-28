@@ -1,4 +1,5 @@
-# link_token
+# LinkToken
+(*link_token*)
 
 ## Overview
 
@@ -32,6 +33,7 @@ res = s.link_token.create_link_token(req)
 
 if res.create_link_token_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
