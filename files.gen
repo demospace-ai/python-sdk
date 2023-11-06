@@ -11,6 +11,7 @@ pylintrc
 setup.py
 src/fabra/__init__.py
 src/fabra/models/__init__.py
+src/fabra/models/errors/sdkerror.py
 src/fabra/utils/__init__.py
 src/fabra/utils/retries.py
 src/fabra/utils/utils.py
@@ -53,14 +54,7 @@ src/fabra/models/shared/fieldmapping.py
 src/fabra/models/shared/syncinput.py
 src/fabra/models/shared/security.py
 src/fabra/models/shared/__init__.py
-docs/sdks/fabra/README.md
-docs/sdks/connection/README.md
-docs/sdks/customerdata/README.md
-docs/sdks/destination/README.md
-docs/sdks/linktoken/README.md
-docs/sdks/object/README.md
-docs/sdks/source/README.md
-docs/sdks/sync/README.md
+src/fabra/models/errors/__init__.py
 USAGE.md
 docs/models/operations/getnamespacesrequest.md
 docs/models/operations/getnamespacesresponse.md
@@ -116,3 +110,12 @@ docs/models/shared/sync.md
 docs/models/shared/fieldmapping.md
 docs/models/shared/syncinput.md
 docs/models/shared/security.md
+docs/sdks/fabra/README.md
+docs/sdks/connection/README.md
+docs/sdks/customerdata/README.md
+docs/sdks/destination/README.md
+docs/sdks/linktoken/README.md
+docs/sdks/object/README.md
+docs/sdks/source/README.md
+docs/sdks/sync/README.md
+.gitattributes

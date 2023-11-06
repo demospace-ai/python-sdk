@@ -1,4 +1,5 @@
-# sync
+# Sync
+(*sync*)
 
 ## Overview
 
@@ -20,9 +21,7 @@ import fabra
 from fabra.models import shared
 
 s = fabra.Fabra(
-    security=shared.Security(
-        api_key_auth="",
-    ),
+    api_key_auth="",
 )
 
 req = shared.SyncInput(
@@ -36,21 +35,8 @@ req = shared.SyncInput(
             destination_field_name='event',
             source_field_name='event_name',
         ),
-        shared.FieldMapping(
-            destination_field_name='event',
-            source_field_name='event_name',
-        ),
-        shared.FieldMapping(
-            destination_field_name='event',
-            source_field_name='event_name',
-        ),
-        shared.FieldMapping(
-            destination_field_name='event',
-            source_field_name='event_name',
-        ),
     ],
     frequency=30,
-    frequency_units=shared.FrequencyUnits.HOURS,
     namespace='end_customer_bigquery_dataset',
     object_id=3,
     primary_key='event_id',
@@ -62,6 +48,7 @@ res = s.sync.create_sync(req)
 
 if res.create_sync_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -84,12 +71,10 @@ Get all syncs
 
 ```python
 import fabra
-
+from fabra.models import shared
 
 s = fabra.Fabra(
-    security=shared.Security(
-        api_key_auth="",
-    ),
+    api_key_auth="",
 )
 
 
@@ -97,6 +82,7 @@ res = s.sync.get_syncs()
 
 if res.get_syncs_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 

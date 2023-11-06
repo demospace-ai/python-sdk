@@ -6,16 +6,14 @@ import requests as requests_http
 from ..shared import queryfilter as shared_queryfilter
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class QueryObjectRequestBody:
-    filters: Optional[list[shared_queryfilter.QueryFilter]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filters'), 'exclude': lambda f: f is None }})
+    filters: Optional[List[shared_queryfilter.QueryFilter]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filters'), 'exclude': lambda f: f is None }})
     
-
 
 
 
@@ -29,7 +27,6 @@ class QueryObjectRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class QueryObject200ApplicationJSONExampleField3:
     nested_field_1: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nested_field_1'), 'exclude': lambda f: f is None }})
@@ -39,7 +36,6 @@ class QueryObject200ApplicationJSONExampleField3:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class QueryObject200ApplicationJSON:
     r"""The response payload will match the schema you defined when creating the object"""
@@ -50,13 +46,15 @@ class QueryObject200ApplicationJSON:
 
 
 
-
 @dataclasses.dataclass
 class QueryObjectResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     query_object_200_application_json_object: Optional[QueryObject200ApplicationJSON] = dataclasses.field(default=None)
     r"""The response payload will match the schema you defined when creating the object"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

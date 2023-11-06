@@ -7,4 +7,4 @@ Successfully fetched objects
 
 | Field                                                | Type                                                 | Required                                             | Description                                          |
 | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| `objects`                                            | list[[shared.Object](../../models/shared/object.md)] | :heavy_minus_sign:                                   | N/A                                                  |
+| `objects`                                            | List[[shared.Object](../../models/shared/object.md)] | :heavy_minus_sign:                                   | N/A                                                  |

@@ -10,7 +10,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateSource200ApplicationJSON:
     r"""Successfully created source"""
@@ -19,13 +18,15 @@ class CreateSource200ApplicationJSON:
 
 
 
-
 @dataclasses.dataclass
 class CreateSourceResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     create_source_200_application_json_object: Optional[CreateSource200ApplicationJSON] = dataclasses.field(default=None)
     r"""Successfully created source"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

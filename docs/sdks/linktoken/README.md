@@ -1,4 +1,5 @@
-# link_token
+# LinkToken
+(*link_token*)
 
 ## Overview
 
@@ -19,9 +20,7 @@ import fabra
 from fabra.models import shared
 
 s = fabra.Fabra(
-    security=shared.Security(
-        api_key_auth="",
-    ),
+    api_key_auth="",
 )
 
 req = shared.CreateLinkTokenRequest(
@@ -32,6 +31,7 @@ res = s.link_token.create_link_token(req)
 
 if res.create_link_token_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

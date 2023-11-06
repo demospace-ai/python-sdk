@@ -7,4 +7,4 @@ Successfully fetched sources
 
 | Field                                                | Type                                                 | Required                                             | Description                                          |
 | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| `sources`                                            | list[[shared.Source](../../models/shared/source.md)] | :heavy_minus_sign:                                   | N/A                                                  |
+| `sources`                                            | List[[shared.Source](../../models/shared/source.md)] | :heavy_minus_sign:                                   | N/A                                                  |

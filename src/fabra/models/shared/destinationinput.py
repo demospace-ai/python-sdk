@@ -13,7 +13,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DestinationInput:
     connection_type: shared_connectiontype.ConnectionType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connection_type') }})
