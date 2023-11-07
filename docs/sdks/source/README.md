@@ -1,5 +1,5 @@
 # Source
-(*source*)
+(*.source*)
 
 ## Overview
 
@@ -57,7 +57,7 @@ req = shared.SourceInput(
 
 res = s.source.create_source(req)
 
-if res.create_source_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -82,7 +82,6 @@ Get all sources
 
 ```python
 import fabra
-from fabra.models import shared
 
 s = fabra.Fabra(
     api_key_auth="",
@@ -91,7 +90,7 @@ s = fabra.Fabra(
 
 res = s.source.get_sources()
 
-if res.get_sources_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

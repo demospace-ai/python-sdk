@@ -1,4 +1,4 @@
-# CreateSource200ApplicationJSON
+# CreateSourceResponseBody
 
 Successfully created source
 

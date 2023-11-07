@@ -3,7 +3,7 @@
 
 ```python
 import fabra
-from fabra.models import operations, shared
+from fabra.models import operations
 
 s = fabra.Fabra(
     api_key_auth="",

@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import destination as shared_destination
+from ...models.shared import destination as shared_destination
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
 from typing import Optional
@@ -11,7 +11,7 @@ from typing import Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CreateDestination200ApplicationJSON:
+class CreateDestinationResponseBody:
     r"""Successfully created destination"""
     destination: Optional[shared_destination.Destination] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('destination'), 'exclude': lambda f: f is None }})
     
@@ -24,7 +24,7 @@ class CreateDestinationResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    create_destination_200_application_json_object: Optional[CreateDestination200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[CreateDestinationResponseBody] = dataclasses.field(default=None)
     r"""Successfully created destination"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

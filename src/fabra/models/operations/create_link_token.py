@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import createlinktokenresponse as shared_createlinktokenresponse
+from ...models.shared import createlinktokenresponse as shared_createlinktokenresponse
 from typing import Optional
 
 

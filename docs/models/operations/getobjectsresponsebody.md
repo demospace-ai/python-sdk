@@ -1,10 +1,10 @@
-# CreateSync200ApplicationJSON
+# GetObjectsResponseBody
 
-Successfully created sync
+Successfully fetched objects
 
 
 ## Fields
 
 | Field                                                | Type                                                 | Required                                             | Description                                          |
 | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| `sync`                                               | [Optional[shared.Sync]](../../models/shared/sync.md) | :heavy_minus_sign:                                   | N/A                                                  |
+| `objects`                                            | List[[shared.Object](../../models/shared/object.md)] | :heavy_minus_sign:                                   | N/A                                                  |

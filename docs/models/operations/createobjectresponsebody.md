@@ -1,4 +1,4 @@
-# CreateObject200ApplicationJSON
+# CreateObjectResponseBody
 
 Successfully created object
 

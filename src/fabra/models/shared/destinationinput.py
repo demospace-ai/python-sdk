@@ -2,11 +2,11 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import bigqueryconfig as shared_bigqueryconfig
-from ..shared import connectiontype as shared_connectiontype
-from ..shared import mongodbconfig as shared_mongodbconfig
-from ..shared import redshiftconfig as shared_redshiftconfig
-from ..shared import snowflakeconfig as shared_snowflakeconfig
+from .bigqueryconfig import BigQueryConfig
+from .connectiontype import ConnectionType
+from .mongodbconfig import MongoDbConfig
+from .redshiftconfig import RedshiftConfig
+from .snowflakeconfig import SnowflakeConfig
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
 from typing import Optional
@@ -15,11 +15,11 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class DestinationInput:
-    connection_type: shared_connectiontype.ConnectionType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connection_type') }})
+    connection_type: ConnectionType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connection_type') }})
     display_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_name') }})
-    bigquery_config: Optional[shared_bigqueryconfig.BigQueryConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bigquery_config'), 'exclude': lambda f: f is None }})
-    mongodb_config: Optional[shared_mongodbconfig.MongoDbConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mongodb_config'), 'exclude': lambda f: f is None }})
-    redshift_config: Optional[shared_redshiftconfig.RedshiftConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('redshift_config'), 'exclude': lambda f: f is None }})
-    snowflake_config: Optional[shared_snowflakeconfig.SnowflakeConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('snowflake_config'), 'exclude': lambda f: f is None }})
+    bigquery_config: Optional[BigQueryConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bigquery_config'), 'exclude': lambda f: f is None }})
+    mongodb_config: Optional[MongoDbConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mongodb_config'), 'exclude': lambda f: f is None }})
+    redshift_config: Optional[RedshiftConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('redshift_config'), 'exclude': lambda f: f is None }})
+    snowflake_config: Optional[SnowflakeConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('snowflake_config'), 'exclude': lambda f: f is None }})
     
 

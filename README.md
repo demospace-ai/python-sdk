@@ -18,7 +18,7 @@ pip install fabra
 <!-- Start SDK Example Usage -->
 ```python
 import fabra
-from fabra.models import operations, shared
+from fabra.models import operations
 
 s = fabra.Fabra(
     api_key_auth="",
@@ -40,36 +40,36 @@ if res.namespaces is not None:
 ## Available Resources and Operations
 
 
-### [connection](docs/sdks/connection/README.md)
+### [.connection](docs/sdks/connection/README.md)
 
 * [get_namespaces](docs/sdks/connection/README.md#get_namespaces) - Get all namespaces
 * [get_schema](docs/sdks/connection/README.md#get_schema) - Get schema for table
 * [get_tables](docs/sdks/connection/README.md#get_tables) - Get all tables
 
-### [customer_data](docs/sdks/customerdata/README.md)
+### [.customer_data](docs/sdks/customerdata/README.md)
 
 * [query_object](docs/sdks/customerdata/README.md#query_object) - Query object record for customer
 
-### [destination](docs/sdks/destination/README.md)
+### [.destination](docs/sdks/destination/README.md)
 
 * [create_destination](docs/sdks/destination/README.md#create_destination) - Create a new destination
 * [get_destinations](docs/sdks/destination/README.md#get_destinations) - Get all destinations
 
-### [link_token](docs/sdks/linktoken/README.md)
+### [.link_token](docs/sdks/linktoken/README.md)
 
 * [create_link_token](docs/sdks/linktoken/README.md#create_link_token) - Create a new link token
 
-### [object](docs/sdks/object/README.md)
+### [.object](docs/sdks/object/README.md)
 
 * [create_object](docs/sdks/object/README.md#create_object) - Create a new object
 * [get_objects](docs/sdks/object/README.md#get_objects) - Get all objects
 
-### [source](docs/sdks/source/README.md)
+### [.source](docs/sdks/source/README.md)
 
 * [create_source](docs/sdks/source/README.md#create_source) - Create a new source
 * [get_sources](docs/sdks/source/README.md#get_sources) - Get all sources
 
-### [sync](docs/sdks/sync/README.md)
+### [.sync](docs/sdks/sync/README.md)
 
 * [create_sync](docs/sdks/sync/README.md#create_sync) - Create a new sync
 * [get_syncs](docs/sdks/sync/README.md#get_syncs) - Get all syncs
@@ -79,8 +79,6 @@ if res.namespaces is not None:
 
 <!-- Start Dev Containers -->
 
-
-
 <!-- End Dev Containers -->
 
 
@@ -89,8 +87,6 @@ if res.namespaces is not None:
 # Error Handling
 
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
-
-
 <!-- End Error Handling -->
 
 
@@ -108,14 +104,13 @@ You can override the default server globally by passing a server index to the `s
 
 For example:
 
-
 ```python
 import fabra
-from fabra.models import operations, shared
+from fabra.models import operations
 
 s = fabra.Fabra(
+    server_idx=0,
     api_key_auth="",
-    server_idx=0
 )
 
 req = operations.GetNamespacesRequest(
@@ -134,14 +129,13 @@ if res.namespaces is not None:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```python
 import fabra
-from fabra.models import operations, shared
+from fabra.models import operations
 
 s = fabra.Fabra(
+    server_url="https://api.fabra.io",
     api_key_auth="",
-    server_url="https://api.fabra.io"
 )
 
 req = operations.GetNamespacesRequest(
@@ -174,9 +168,43 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = fabra.Fabra(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security scheme globally:
+
+| Name           | Type           | Scheme         |
+| -------------- | -------------- | -------------- |
+| `api_key_auth` | apiKey         | API key        |
+
+To authenticate with the API the `api_key_auth` parameter must be set when initializing the SDK client instance. For example:
+
+```python
+import fabra
+from fabra.models import operations
+
+s = fabra.Fabra(
+    api_key_auth="",
+)
+
+req = operations.GetNamespacesRequest(
+    connection_id=995455,
+)
+
+res = s.connection.get_namespaces(req)
+
+if res.namespaces is not None:
+    # handle response
+    pass
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

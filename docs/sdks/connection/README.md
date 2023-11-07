@@ -1,5 +1,5 @@
 # Connection
-(*connection*)
+(*.connection*)
 
 ## Overview
 
@@ -19,7 +19,7 @@ Get all namespaces
 
 ```python
 import fabra
-from fabra.models import operations, shared
+from fabra.models import operations
 
 s = fabra.Fabra(
     api_key_auth="",
@@ -56,7 +56,7 @@ Get schema for table
 
 ```python
 import fabra
-from fabra.models import operations, shared
+from fabra.models import operations
 
 s = fabra.Fabra(
     api_key_auth="",
@@ -70,7 +70,7 @@ req = operations.GetSchemaRequest(
 
 res = s.connection.get_schema(req)
 
-if res.get_schema_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -95,7 +95,7 @@ Get all tables
 
 ```python
 import fabra
-from fabra.models import operations, shared
+from fabra.models import operations
 
 s = fabra.Fabra(
     api_key_auth="",
@@ -108,7 +108,7 @@ req = operations.GetTablesRequest(
 
 res = s.connection.get_tables(req)
 
-if res.get_tables_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

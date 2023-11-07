@@ -1,5 +1,5 @@
 # LinkToken
-(*link_token*)
+(*.link_token*)
 
 ## Overview
 

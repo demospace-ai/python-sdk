@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import namespaces as shared_namespaces
+from ...models.shared import namespaces as shared_namespaces
 from typing import Optional
 
 

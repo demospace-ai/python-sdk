@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import objectfield as shared_objectfield
+from .objectfield import ObjectField
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
 from typing import List, Optional
@@ -17,7 +17,7 @@ class Object:
     r"""This is where Fabra will insert the End Customer ID specified in the sync configuration"""
     id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     namespace: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('namespace'), 'exclude': lambda f: f is None }})
-    object_fields: Optional[List[shared_objectfield.ObjectField]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('object_fields'), 'exclude': lambda f: f is None }})
+    object_fields: Optional[List[ObjectField]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('object_fields'), 'exclude': lambda f: f is None }})
     table_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('table_name'), 'exclude': lambda f: f is None }})
     
 

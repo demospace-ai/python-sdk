@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import fieldtype as shared_fieldtype
+from .fieldtype import FieldType
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
 from typing import Optional
@@ -12,6 +12,6 @@ from typing import Optional
 @dataclasses.dataclass
 class Field:
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
-    type: Optional[shared_fieldtype.FieldType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[FieldType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 

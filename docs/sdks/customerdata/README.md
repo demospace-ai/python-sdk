@@ -1,5 +1,5 @@
 # CustomerData
-(*customer_data*)
+(*.customer_data*)
 
 ### Available Operations
 
@@ -34,7 +34,7 @@ req = operations.QueryObjectRequest(
 
 res = s.customer_data.query_object(req)
 
-if res.query_object_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

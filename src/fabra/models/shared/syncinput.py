@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import fieldmapping as shared_fieldmapping
-from ..shared import frequencyunits as shared_frequencyunits
+from .fieldmapping import FieldMapping
+from .frequencyunits import FrequencyUnits
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
 from typing import List, Optional
@@ -15,13 +15,13 @@ class SyncInput:
     destination_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('destination_id') }})
     display_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_name') }})
     end_customer_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_customer_id') }})
-    field_mappings: List[shared_fieldmapping.FieldMapping] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('field_mappings') }})
+    field_mappings: List[FieldMapping] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('field_mappings') }})
     object_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('object_id') }})
     source_id: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source_id') }})
     cursor_field: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cursor_field'), 'exclude': lambda f: f is None }})
     custom_join: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_join'), 'exclude': lambda f: f is None }})
     frequency: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('frequency'), 'exclude': lambda f: f is None }})
-    frequency_units: Optional[shared_frequencyunits.FrequencyUnits] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('frequency_units'), 'exclude': lambda f: f is None }})
+    frequency_units: Optional[FrequencyUnits] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('frequency_units'), 'exclude': lambda f: f is None }})
     namespace: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('namespace'), 'exclude': lambda f: f is None }})
     primary_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('primary_key'), 'exclude': lambda f: f is None }})
     table_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('table_name'), 'exclude': lambda f: f is None }})

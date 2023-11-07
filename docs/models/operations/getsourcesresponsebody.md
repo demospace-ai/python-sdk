@@ -1,4 +1,4 @@
-# GetSources200ApplicationJSON
+# GetSourcesResponseBody
 
 Successfully fetched sources
 
