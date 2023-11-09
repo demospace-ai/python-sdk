@@ -13,6 +13,7 @@ class Connection:
         self.sdk_configuration = sdk_config
         
     
+    
     def get_namespaces(self, request: operations.GetNamespacesRequest) -> operations.GetNamespacesResponse:
         r"""Get all namespaces"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -23,7 +24,10 @@ class Connection:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -42,6 +46,7 @@ class Connection:
         return res
 
     
+    
     def get_schema(self, request: operations.GetSchemaRequest) -> operations.GetSchemaResponse:
         r"""Get schema for table"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -52,7 +57,10 @@ class Connection:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -71,6 +79,7 @@ class Connection:
         return res
 
     
+    
     def get_tables(self, request: operations.GetTablesRequest) -> operations.GetTablesResponse:
         r"""Get all tables"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -81,7 +90,10 @@ class Connection:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')

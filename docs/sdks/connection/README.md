@@ -1,5 +1,5 @@
 # Connection
-(*.connection*)
+(*connection*)
 
 ## Overview
 
@@ -46,7 +46,11 @@ if res.namespaces is not None:
 ### Response
 
 **[operations.GetNamespacesResponse](../../models/operations/getnamespacesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_schema
 
@@ -85,7 +89,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetSchemaResponse](../../models/operations/getschemaresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_tables
 
@@ -123,4 +131,8 @@ if res.object is not None:
 ### Response
 
 **[operations.GetTablesResponse](../../models/operations/gettablesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

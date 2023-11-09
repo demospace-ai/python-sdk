@@ -1,5 +1,5 @@
 # Sync
-(*.sync*)
+(*sync*)
 
 ## Overview
 
@@ -61,7 +61,11 @@ if res.object is not None:
 ### Response
 
 **[operations.CreateSyncResponse](../../models/operations/createsyncresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_syncs
 
@@ -88,4 +92,8 @@ if res.object is not None:
 ### Response
 
 **[operations.GetSyncsResponse](../../models/operations/getsyncsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

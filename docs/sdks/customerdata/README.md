@@ -1,5 +1,5 @@
 # CustomerData
-(*.customer_data*)
+(*customer_data*)
 
 ### Available Operations
 
@@ -49,4 +49,8 @@ if res.object is not None:
 ### Response
 
 **[operations.QueryObjectResponse](../../models/operations/queryobjectresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -11,7 +11,7 @@ from .source import Source
 from .sync import Sync
 from fabra import utils
 from fabra.models import shared
-from typing import Dict
+from typing import Callable, Dict, Union
 
 class Fabra:
     connection: Connection
@@ -31,7 +31,7 @@ class Fabra:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 api_key_auth: str,
+                 api_key_auth: Union[str,Callable[[], str]],
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,
@@ -41,7 +41,7 @@ class Fabra:
         """Instantiates the SDK configuring it with the provided parameters.
         
         :param api_key_auth: The api_key_auth required for authentication
-        :type api_key_auth: str
+        :type api_key_auth: Union[str,Callable[[], str]]
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations
@@ -56,15 +56,13 @@ class Fabra:
         if client is None:
             client = requests_http.Session()
         
-        
-        security_client = utils.configure_security_client(client, shared.Security(api_key_auth = api_key_auth))
-        
+        security = shared.Security(api_key_auth = api_key_auth)
         
         if server_url is not None:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
 
-        self.sdk_configuration = SDKConfiguration(client, security_client, server_url, server_idx, retry_config=retry_config)
+        self.sdk_configuration = SDKConfiguration(client, security, server_url, server_idx, retry_config=retry_config)
        
         self._init_sdks()
     

@@ -13,6 +13,7 @@ class Source:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_source(self, request: shared.SourceInput) -> operations.CreateSourceResponse:
         r"""Create a new source"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -27,7 +28,10 @@ class Source:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -46,6 +50,7 @@ class Source:
         return res
 
     
+    
     def get_sources(self) -> operations.GetSourcesResponse:
         r"""Get all sources"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -55,7 +60,10 @@ class Source:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')

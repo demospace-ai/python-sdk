@@ -1,5 +1,5 @@
 # LinkToken
-(*.link_token*)
+(*link_token*)
 
 ## Overview
 
@@ -44,4 +44,8 @@ if res.create_link_token_response is not None:
 ### Response
 
 **[operations.CreateLinkTokenResponse](../../models/operations/createlinktokenresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

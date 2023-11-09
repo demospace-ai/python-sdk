@@ -1,5 +1,5 @@
 # Object
-(*.object*)
+(*object*)
 
 ## Overview
 
@@ -58,7 +58,11 @@ if res.object is not None:
 ### Response
 
 **[operations.CreateObjectResponse](../../models/operations/createobjectresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_objects
 
@@ -85,4 +89,8 @@ if res.object is not None:
 ### Response
 
 **[operations.GetObjectsResponse](../../models/operations/getobjectsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

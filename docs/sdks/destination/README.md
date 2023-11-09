@@ -1,5 +1,5 @@
 # Destination
-(*.destination*)
+(*destination*)
 
 ## Overview
 
@@ -71,7 +71,11 @@ if res.object is not None:
 ### Response
 
 **[operations.CreateDestinationResponse](../../models/operations/createdestinationresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_destinations
 
@@ -98,4 +102,8 @@ if res.object is not None:
 ### Response
 
 **[operations.GetDestinationsResponse](../../models/operations/getdestinationsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

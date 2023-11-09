@@ -40,36 +40,36 @@ if res.namespaces is not None:
 ## Available Resources and Operations
 
 
-### [.connection](docs/sdks/connection/README.md)
+### [connection](docs/sdks/connection/README.md)
 
 * [get_namespaces](docs/sdks/connection/README.md#get_namespaces) - Get all namespaces
 * [get_schema](docs/sdks/connection/README.md#get_schema) - Get schema for table
 * [get_tables](docs/sdks/connection/README.md#get_tables) - Get all tables
 
-### [.customer_data](docs/sdks/customerdata/README.md)
+### [customer_data](docs/sdks/customerdata/README.md)
 
 * [query_object](docs/sdks/customerdata/README.md#query_object) - Query object record for customer
 
-### [.destination](docs/sdks/destination/README.md)
+### [destination](docs/sdks/destination/README.md)
 
 * [create_destination](docs/sdks/destination/README.md#create_destination) - Create a new destination
 * [get_destinations](docs/sdks/destination/README.md#get_destinations) - Get all destinations
 
-### [.link_token](docs/sdks/linktoken/README.md)
+### [link_token](docs/sdks/linktoken/README.md)
 
 * [create_link_token](docs/sdks/linktoken/README.md#create_link_token) - Create a new link token
 
-### [.object](docs/sdks/object/README.md)
+### [object](docs/sdks/object/README.md)
 
 * [create_object](docs/sdks/object/README.md#create_object) - Create a new object
 * [get_objects](docs/sdks/object/README.md#get_objects) - Get all objects
 
-### [.source](docs/sdks/source/README.md)
+### [source](docs/sdks/source/README.md)
 
 * [create_source](docs/sdks/source/README.md#create_source) - Create a new source
 * [get_sources](docs/sdks/source/README.md#get_sources) - Get all sources
 
-### [.sync](docs/sdks/sync/README.md)
+### [sync](docs/sdks/sync/README.md)
 
 * [create_sync](docs/sdks/sync/README.md#create_sync) - Create a new sync
 * [get_syncs](docs/sdks/sync/README.md#get_syncs) - Get all syncs
@@ -86,7 +86,39 @@ if res.namespaces is not None:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+
+## Example
+
+```python
+import fabra
+from fabra.models import operations
+
+s = fabra.Fabra(
+    api_key_auth="",
+)
+
+req = operations.GetNamespacesRequest(
+    connection_id=995455,
+)
+
+res = None
+try:
+    res = s.connection.get_namespaces(req)
+
+except (errors.SDKError) as e:
+    print(e) # handle exception
+
+
+if res.namespaces is not None:
+    # handle response
+    pass
+```
 <!-- End Error Handling -->
 
 
@@ -158,7 +190,7 @@ if res.namespaces is not None:
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 
-For example, you could specify a header for every request that your sdk makes as follows:
+For example, you could specify a header for every request that this sdk makes as follows:
 
 ```python
 import fabra
@@ -173,12 +205,11 @@ s = fabra.Fabra(client: http_client)
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security scheme globally:
+This SDK supports the following security scheme globally:
 
 | Name           | Type           | Scheme         |
 | -------------- | -------------- | -------------- |

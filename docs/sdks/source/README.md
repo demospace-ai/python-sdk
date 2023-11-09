@@ -1,5 +1,5 @@
 # Source
-(*.source*)
+(*source*)
 
 ## Overview
 
@@ -72,7 +72,11 @@ if res.object is not None:
 ### Response
 
 **[operations.CreateSourceResponse](../../models/operations/createsourceresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_sources
 
@@ -99,4 +103,8 @@ if res.object is not None:
 ### Response
 
 **[operations.GetSourcesResponse](../../models/operations/getsourcesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
