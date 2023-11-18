@@ -14,6 +14,7 @@ src/fabra/utils/__init__.py
 src/fabra/utils/retries.py
 src/fabra/utils/utils.py
 src/fabra/models/errors/sdkerror.py
+tests/helpers.py
 src/fabra/models/operations/get_namespaces.py
 src/fabra/models/operations/get_schema.py
 src/fabra/models/operations/get_tables.py
