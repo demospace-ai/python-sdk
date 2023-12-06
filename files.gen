@@ -56,7 +56,6 @@ src/fabra/models/__init__.py
 src/fabra/models/errors/__init__.py
 src/fabra/models/operations/__init__.py
 src/fabra/models/shared/__init__.py
-USAGE.md
 docs/models/operations/getnamespacesrequest.md
 docs/models/operations/getnamespacesresponse.md
 docs/models/operations/getschemarequest.md
@@ -119,4 +118,5 @@ docs/sdks/linktoken/README.md
 docs/sdks/object/README.md
 docs/sdks/source/README.md
 docs/sdks/sync/README.md
+USAGE.md
 .gitattributes
