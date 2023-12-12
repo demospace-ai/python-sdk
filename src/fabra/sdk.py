@@ -11,7 +11,7 @@ from .source import Source
 from .sync import Sync
 from fabra import utils
 from fabra.models import shared
-from typing import Callable, Dict, Union
+from typing import Dict
 
 class Fabra:
     connection: Connection
@@ -31,7 +31,7 @@ class Fabra:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 api_key_auth: Union[str,Callable[[], str]],
+                 api_key_auth: str ,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,

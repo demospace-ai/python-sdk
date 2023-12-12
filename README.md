@@ -24,7 +24,7 @@ import fabra
 from fabra.models import operations
 
 s = fabra.Fabra(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetNamespacesRequest(
@@ -97,7 +97,7 @@ import fabra
 from fabra.models import operations
 
 s = fabra.Fabra(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetNamespacesRequest(
@@ -138,7 +138,7 @@ from fabra.models import operations
 
 s = fabra.Fabra(
     server_idx=0,
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetNamespacesRequest(
@@ -162,7 +162,7 @@ from fabra.models import operations
 
 s = fabra.Fabra(
     server_url="https://api.fabra.io",
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetNamespacesRequest(
@@ -214,7 +214,7 @@ import fabra
 from fabra.models import operations
 
 s = fabra.Fabra(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetNamespacesRequest(

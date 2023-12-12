@@ -21,7 +21,7 @@ import fabra
 from fabra.models import shared
 
 s = fabra.Fabra(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.ObjectInput(
@@ -74,7 +74,7 @@ Get all objects
 import fabra
 
 s = fabra.Fabra(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 

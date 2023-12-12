@@ -21,7 +21,7 @@ import fabra
 from fabra.models import shared
 
 s = fabra.Fabra(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.SyncInput(
@@ -77,7 +77,7 @@ Get all syncs
 import fabra
 
 s = fabra.Fabra(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 
