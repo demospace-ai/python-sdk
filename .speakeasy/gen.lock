@@ -4,16 +4,16 @@ management:
   docChecksum: a08d8b55b00bfb4ba4828a322fd16614
   docVersion: 0.1.0
   speakeasyVersion: internal
-  generationVersion: 2.233.2
-  releaseVersion: 0.25.2
-  configChecksum: 896e10af7d65098d54688650407c0f57
+  generationVersion: 2.234.3
+  releaseVersion: 0.25.3
+  configChecksum: 699fadfbfa838ffe94345b00daac1957
   repoURL: https://github.com/fabra-io/python-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/fabra-io/python-sdk.git
   published: true
 features:
   python:
-    core: 4.4.1
+    core: 4.4.2
     globalSecurity: 2.83.1
     globalServerURLs: 2.82.1
 generatedFiles:
