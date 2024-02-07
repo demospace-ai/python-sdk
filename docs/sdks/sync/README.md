@@ -25,8 +25,6 @@ s = fabra.Fabra(
 )
 
 req = shared.SyncInput(
-    cursor_field='updated_at',
-    custom_join='select * from events join additional_properties on events.id = additional_properties.event_id;',
     destination_id=2,
     display_name='Event Sync',
     end_customer_id='abc123',
@@ -36,11 +34,13 @@ req = shared.SyncInput(
             source_field_name='event_name',
         ),
     ],
+    object_id=3,
+    source_id=1,
+    cursor_field='updated_at',
+    custom_join='select * from events join additional_properties on events.id = additional_properties.event_id;',
     frequency=30,
     namespace='end_customer_bigquery_dataset',
-    object_id=3,
     primary_key='event_id',
-    source_id=1,
     table_name='end_customer_events',
 )
 

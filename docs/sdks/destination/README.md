@@ -25,17 +25,17 @@ s = fabra.Fabra(
 )
 
 req = shared.DestinationInput(
-    bigquery_config=shared.BigQueryConfig(
-        credentials='Paste JSON from GCP',
-        location='us-west1',
-    ),
     connection_type=shared.ConnectionType.SNOWFLAKE,
     display_name='BigQuery',
+    bigquery_config=shared.BigQueryConfig(
+        location='us-west1',
+        credentials='Paste JSON from GCP',
+    ),
     mongodb_config=shared.MongoDbConfig(
-        connection_options='retryWrites=true&w=majority',
         host='examplecluster.abc123.mongodb.net',
         password='securePassword123',
         username='jane_doe',
+        connection_options='retryWrites=true&w=majority',
     ),
     redshift_config=shared.RedshiftConfig(
         database_name='your_database',

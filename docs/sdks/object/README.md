@@ -25,20 +25,20 @@ s = fabra.Fabra(
 )
 
 req = shared.ObjectInput(
-    cursor_field='updated_at',
     destination_id=2,
     display_name='BigQuery',
     end_customer_id_field='end_customer_id',
     frequency=30,
     frequency_units=shared.FrequencyUnits.MINUTES,
     namespace='bigquery_dataset',
+    table_name='events',
+    cursor_field='updated_at',
     object_fields=[
         shared.ObjectField(
             name='event_name',
         ),
     ],
     primary_key='event_id',
-    table_name='events',
 )
 
 res = s.object.create_object(req)

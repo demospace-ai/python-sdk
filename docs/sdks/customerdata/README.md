@@ -20,6 +20,8 @@ s = fabra.Fabra(
 )
 
 req = operations.QueryObjectRequest(
+    end_customer_id='string',
+    object_id=906396,
     request_body=operations.QueryObjectRequestBody(
         filters=[
             shared.QueryFilter(
@@ -28,8 +30,6 @@ req = operations.QueryObjectRequest(
             ),
         ],
     ),
-    end_customer_id='string',
-    object_id=906396,
 )
 
 res = s.customer_data.query_object(req)
