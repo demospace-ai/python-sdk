@@ -33,11 +33,6 @@ req = shared.ObjectInput(
     namespace='bigquery_dataset',
     table_name='events',
     cursor_field='updated_at',
-    object_fields=[
-        shared.ObjectField(
-            name='event_name',
-        ),
-    ],
     primary_key='event_id',
 )
 

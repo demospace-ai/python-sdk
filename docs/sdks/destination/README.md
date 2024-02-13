@@ -27,31 +27,6 @@ s = fabra.Fabra(
 req = shared.DestinationInput(
     connection_type=shared.ConnectionType.SNOWFLAKE,
     display_name='BigQuery',
-    bigquery_config=shared.BigQueryConfig(
-        location='us-west1',
-        credentials='Paste JSON from GCP',
-    ),
-    mongodb_config=shared.MongoDbConfig(
-        host='examplecluster.abc123.mongodb.net',
-        password='securePassword123',
-        username='jane_doe',
-        connection_options='retryWrites=true&w=majority',
-    ),
-    redshift_config=shared.RedshiftConfig(
-        database_name='your_database',
-        host='examplecluster.12345.us-west-1.redshift.amazonaws.com',
-        password='securePassword123',
-        port='5432',
-        username='jane_doe',
-    ),
-    snowflake_config=shared.SnowflakeConfig(
-        database_name='your_database',
-        host='abc123.us-east4.gcp.snowflakecomputing.com',
-        password='securePassword123',
-        role='your_role',
-        username='jane_doe',
-        warehouse_name='your_warehouse',
-    ),
 )
 
 res = s.destination.create_destination(req)

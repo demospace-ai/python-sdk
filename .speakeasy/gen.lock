@@ -4,7 +4,7 @@ management:
   docChecksum: a08d8b55b00bfb4ba4828a322fd16614
   docVersion: 0.1.0
   speakeasyVersion: internal
-  generationVersion: 2.250.12
+  generationVersion: 2.253.0
   releaseVersion: 0.27.0
   configChecksum: 5c224694e19d394f84d740b617181a91
   repoURL: https://github.com/fabra-io/python-sdk.git

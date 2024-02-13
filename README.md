@@ -94,7 +94,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import fabra
-from fabra.models import operations
+from fabra.models import errors, operations
 
 s = fabra.Fabra(
     api_key_auth="<YOUR_API_KEY_HERE>",
@@ -108,7 +108,7 @@ res = None
 try:
     res = s.connection.get_namespaces(req)
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.namespaces is not None:
