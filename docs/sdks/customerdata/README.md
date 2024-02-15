@@ -20,7 +20,7 @@ s = fabra.Fabra(
 )
 
 req = operations.QueryObjectRequest(
-    end_customer_id='string',
+    end_customer_id='<value>',
     object_id=906396,
 )
 

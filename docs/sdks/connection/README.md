@@ -68,8 +68,8 @@ s = fabra.Fabra(
 
 req = operations.GetSchemaRequest(
     connection_id=367941,
-    namespace='string',
-    table_name='string',
+    namespace='<value>',
+    table_name='<value>',
 )
 
 res = s.connection.get_schema(req)
@@ -111,7 +111,7 @@ s = fabra.Fabra(
 
 req = operations.GetTablesRequest(
     connection_id=820803,
-    namespace='string',
+    namespace='<value>',
 )
 
 res = s.connection.get_tables(req)
