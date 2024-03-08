@@ -36,6 +36,7 @@ res = s.connection.get_namespaces(req)
 if res.namespaces is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
 
@@ -114,6 +115,7 @@ except errors.SDKError as e:
 if res.namespaces is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -150,6 +152,7 @@ res = s.connection.get_namespaces(req)
 if res.namespaces is not None:
     # handle response
     pass
+
 ```
 
 
@@ -174,6 +177,7 @@ res = s.connection.get_namespaces(req)
 if res.namespaces is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 
@@ -226,6 +230,7 @@ res = s.connection.get_namespaces(req)
 if res.namespaces is not None:
     # handle response
     pass
+
 ```
 <!-- End Authentication [security] -->
 

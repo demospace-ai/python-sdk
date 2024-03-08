@@ -34,6 +34,7 @@ res = s.destination.create_destination(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -71,6 +72,7 @@ res = s.destination.get_destinations()
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 

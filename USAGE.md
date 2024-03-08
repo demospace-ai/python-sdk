@@ -16,5 +16,6 @@ res = s.connection.get_namespaces(req)
 if res.namespaces is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->

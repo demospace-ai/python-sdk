@@ -29,6 +29,7 @@ res = s.customer_data.query_object(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

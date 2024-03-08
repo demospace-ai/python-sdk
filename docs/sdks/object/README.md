@@ -41,6 +41,7 @@ res = s.object.create_object(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -78,6 +79,7 @@ res = s.object.get_objects()
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 

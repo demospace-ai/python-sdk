@@ -49,6 +49,7 @@ res = s.sync.create_sync(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -86,6 +87,7 @@ res = s.sync.get_syncs()
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 
