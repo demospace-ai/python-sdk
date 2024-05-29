@@ -1,4 +1,5 @@
-# sync
+# Sync
+(*sync*)
 
 ## Overview
 
@@ -17,64 +18,54 @@ Create a new sync
 
 ```python
 import fabra
-from fabra.models import shared
+from fabra.models import components
 
 s = fabra.Fabra(
-    security=shared.Security(
-        api_key_auth="",
-    ),
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-req = shared.SyncInput(
-    cursor_field='updated_at',
-    custom_join='select * from events join additional_properties on events.id = additional_properties.event_id;',
+
+res = s.sync.create_sync(request=components.SyncInput(
     destination_id=2,
     display_name='Event Sync',
     end_customer_id='abc123',
     field_mappings=[
-        shared.FieldMapping(
-            destination_field_name='event',
-            source_field_name='event_name',
-        ),
-        shared.FieldMapping(
-            destination_field_name='event',
-            source_field_name='event_name',
-        ),
-        shared.FieldMapping(
-            destination_field_name='event',
-            source_field_name='event_name',
-        ),
-        shared.FieldMapping(
+        components.FieldMapping(
             destination_field_name='event',
             source_field_name='event_name',
         ),
     ],
-    frequency=30,
-    frequency_units=shared.FrequencyUnits.HOURS,
-    namespace='end_customer_bigquery_dataset',
     object_id=3,
-    primary_key='event_id',
     source_id=1,
+    cursor_field='updated_at',
+    custom_join='select * from events join additional_properties on events.id = additional_properties.event_id;',
+    frequency=30,
+    namespace='end_customer_bigquery_dataset',
+    primary_key='event_id',
     table_name='end_customer_events',
-)
+))
 
-res = s.sync.create_sync(req)
-
-if res.create_sync_200_application_json_object is not None:
+if res.object is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                            | Type                                                 | Required                                             | Description                                          |
-| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| `request`                                            | [shared.SyncInput](../../models/shared/syncinput.md) | :heavy_check_mark:                                   | The request object to use for the request.           |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `request`                                                    | [components.SyncInput](../../models/components/syncinput.md) | :heavy_check_mark:                                           | The request object to use for the request.                   |
 
 
 ### Response
 
 **[operations.CreateSyncResponse](../../models/operations/createsyncresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get_syncs
 
@@ -85,22 +76,25 @@ Get all syncs
 ```python
 import fabra
 
-
 s = fabra.Fabra(
-    security=shared.Security(
-        api_key_auth="",
-    ),
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 
 res = s.sync.get_syncs()
 
-if res.get_syncs_200_application_json_object is not None:
+if res.object is not None:
     # handle response
+    pass
+
 ```
 
 
 ### Response
 
 **[operations.GetSyncsResponse](../../models/operations/getsyncsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

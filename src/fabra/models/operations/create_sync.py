@@ -2,30 +2,27 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import sync as shared_sync
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import sync as components_sync
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
 from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class CreateSync200ApplicationJSON:
+class CreateSyncResponseBody:
     r"""Successfully created sync"""
-    sync: Optional[shared_sync.Sync] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sync'), 'exclude': lambda f: f is None }})
+    sync: Optional[components_sync.Sync] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sync'), 'exclude': lambda f: f is None }})
     
 
 
 
-
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CreateSyncResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    create_sync_200_application_json_object: Optional[CreateSync200ApplicationJSON] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    object: Optional[CreateSyncResponseBody] = dataclasses.field(default=None)
     r"""Successfully created sync"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

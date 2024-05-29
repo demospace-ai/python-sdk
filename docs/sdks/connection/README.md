@@ -1,4 +1,5 @@
-# connection
+# Connection
+(*connection*)
 
 ## Overview
 
@@ -21,19 +22,18 @@ import fabra
 from fabra.models import operations
 
 s = fabra.Fabra(
-    security=shared.Security(
-        api_key_auth="",
-    ),
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-req = operations.GetNamespacesRequest(
-    connection_id=592845,
-)
 
-res = s.connection.get_namespaces(req)
+res = s.connection.get_namespaces(request=operations.GetNamespacesRequest(
+    connection_id=995455,
+))
 
 if res.namespaces is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -46,7 +46,11 @@ if res.namespaces is not None:
 ### Response
 
 **[operations.GetNamespacesResponse](../../models/operations/getnamespacesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get_schema
 
@@ -59,21 +63,20 @@ import fabra
 from fabra.models import operations
 
 s = fabra.Fabra(
-    security=shared.Security(
-        api_key_auth="",
-    ),
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-req = operations.GetSchemaRequest(
-    connection_id=715190,
-    namespace='quibusdam',
-    table_name='unde',
-)
 
-res = s.connection.get_schema(req)
+res = s.connection.get_schema(request=operations.GetSchemaRequest(
+    connection_id=367941,
+    namespace='<value>',
+    table_name='<value>',
+))
 
-if res.get_schema_200_application_json_object is not None:
+if res.object is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -86,7 +89,11 @@ if res.get_schema_200_application_json_object is not None:
 ### Response
 
 **[operations.GetSchemaResponse](../../models/operations/getschemaresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get_tables
 
@@ -99,20 +106,19 @@ import fabra
 from fabra.models import operations
 
 s = fabra.Fabra(
-    security=shared.Security(
-        api_key_auth="",
-    ),
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-req = operations.GetTablesRequest(
-    connection_id=857946,
-    namespace='corrupti',
-)
 
-res = s.connection.get_tables(req)
+res = s.connection.get_tables(request=operations.GetTablesRequest(
+    connection_id=820803,
+    namespace='<value>',
+))
 
-if res.get_tables_200_application_json_object is not None:
+if res.object is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -125,4 +131,8 @@ if res.get_tables_200_application_json_object is not None:
 ### Response
 
 **[operations.GetTablesResponse](../../models/operations/gettablesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

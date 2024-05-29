@@ -2,30 +2,27 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import source as shared_source
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import source as components_source
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetSources200ApplicationJSON:
+class GetSourcesResponseBody:
     r"""Successfully fetched sources"""
-    sources: Optional[list[shared_source.Source]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sources'), 'exclude': lambda f: f is None }})
+    sources: Optional[List[components_source.Source]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sources'), 'exclude': lambda f: f is None }})
     
 
 
 
-
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetSourcesResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    get_sources_200_application_json_object: Optional[GetSources200ApplicationJSON] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    object: Optional[GetSourcesResponseBody] = dataclasses.field(default=None)
     r"""Successfully fetched sources"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

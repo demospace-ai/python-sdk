@@ -2,30 +2,27 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import destination as shared_destination
+from ...models.components import destination as components_destination
+from ...models.components import httpmetadata as components_httpmetadata
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetDestinations200ApplicationJSON:
+class GetDestinationsResponseBody:
     r"""Successfully fetched destinations"""
-    destinations: Optional[list[shared_destination.Destination]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('destinations'), 'exclude': lambda f: f is None }})
+    destinations: Optional[List[components_destination.Destination]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('destinations'), 'exclude': lambda f: f is None }})
     
 
 
 
-
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetDestinationsResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    get_destinations_200_application_json_object: Optional[GetDestinations200ApplicationJSON] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    object: Optional[GetDestinationsResponseBody] = dataclasses.field(default=None)
     r"""Successfully fetched destinations"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
