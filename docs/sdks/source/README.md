@@ -1,4 +1,5 @@
-# source
+# Source
+(*source*)
 
 ## Overview
 
@@ -17,36 +18,35 @@ Create a new source
 
 ```python
 import fabra
-from fabra.models import shared
+from fabra.models import components
 
 s = fabra.Fabra(
-    security=shared.Security(
-        api_key_auth="",
-    ),
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-req = shared.SourceInput(
-    bigquery_config=shared.BigQueryConfig(
-        credentials='Paste JSON from GCP',
-        location='us-west1',
-    ),
-    connection_type=shared.ConnectionType.SNOWFLAKE,
+
+res = s.source.create_source(request=components.SourceInput(
+    connection_type=components.ConnectionType.WEBHOOK,
     display_name='Frontend Events',
     end_customer_id='abcd-1234-efgh-5678',
-    mongodb_config=shared.MongoDbConfig(
-        connection_options='retryWrites=true&w=majority',
+    bigquery_config=components.BigQueryConfig(
+        location='us-west1',
+        credentials='Paste JSON from GCP',
+    ),
+    mongodb_config=components.MongoDbConfig(
         host='examplecluster.abc123.mongodb.net',
         password='securePassword123',
         username='jane_doe',
+        connection_options='retryWrites=true&w=majority',
     ),
-    redshift_config=shared.RedshiftConfig(
+    redshift_config=components.RedshiftConfig(
         database_name='your_database',
         host='examplecluster.12345.us-west-1.redshift.amazonaws.com',
         password='securePassword123',
         port='5432',
         username='jane_doe',
     ),
-    snowflake_config=shared.SnowflakeConfig(
+    snowflake_config=components.SnowflakeConfig(
         database_name='your_database',
         host='abc123.us-east4.gcp.snowflakecomputing.com',
         password='securePassword123',
@@ -54,25 +54,29 @@ req = shared.SourceInput(
         username='jane_doe',
         warehouse_name='your_warehouse',
     ),
-)
+))
 
-res = s.source.create_source(req)
-
-if res.create_source_200_application_json_object is not None:
+if res.object is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `request`                                                | [shared.SourceInput](../../models/shared/sourceinput.md) | :heavy_check_mark:                                       | The request object to use for the request.               |
+| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `request`                                                        | [components.SourceInput](../../models/components/sourceinput.md) | :heavy_check_mark:                                               | The request object to use for the request.                       |
 
 
 ### Response
 
 **[operations.CreateSourceResponse](../../models/operations/createsourceresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get_sources
 
@@ -83,22 +87,25 @@ Get all sources
 ```python
 import fabra
 
-
 s = fabra.Fabra(
-    security=shared.Security(
-        api_key_auth="",
-    ),
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 
 res = s.source.get_sources()
 
-if res.get_sources_200_application_json_object is not None:
+if res.object is not None:
     # handle response
+    pass
+
 ```
 
 
 ### Response
 
 **[operations.GetSourcesResponse](../../models/operations/getsourcesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

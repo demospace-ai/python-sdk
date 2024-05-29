@@ -2,11 +2,10 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
+from ...models.components import httpmetadata as components_httpmetadata
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -18,22 +17,19 @@ class GetTablesRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetTables200ApplicationJSON:
+class GetTablesResponseBody:
     r"""Successfully fetched tables"""
-    tables: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tables'), 'exclude': lambda f: f is None }})
+    tables: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tables'), 'exclude': lambda f: f is None }})
     
 
 
 
-
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetTablesResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    get_tables_200_application_json_object: Optional[GetTables200ApplicationJSON] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    object: Optional[GetTablesResponseBody] = dataclasses.field(default=None)
     r"""Successfully fetched tables"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import namespaces as shared_namespaces
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import namespaces as components_namespaces
+from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -15,13 +15,11 @@ class GetNamespacesRequest:
 
 
 
-
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetNamespacesResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    namespaces: Optional[shared_namespaces.Namespaces] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    namespaces: Optional[components_namespaces.Namespaces] = dataclasses.field(default=None)
     r"""Successfully fetched namespaces"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

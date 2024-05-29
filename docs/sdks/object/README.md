@@ -1,4 +1,5 @@
-# object
+# Object
+(*object*)
 
 ## Overview
 
@@ -17,53 +18,51 @@ Create a new object
 
 ```python
 import fabra
-from fabra.models import shared
+from fabra.models import components
 
 s = fabra.Fabra(
-    security=shared.Security(
-        api_key_auth="",
-    ),
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-req = shared.ObjectInput(
-    cursor_field='updated_at',
+
+res = s.object.create_object(request=components.ObjectInput(
     destination_id=2,
     display_name='BigQuery',
     end_customer_id_field='end_customer_id',
     frequency=30,
-    frequency_units=shared.FrequencyUnits.HOURS,
+    frequency_units=components.FrequencyUnits.MINUTES,
     namespace='bigquery_dataset',
+    table_name='events',
+    cursor_field='updated_at',
     object_fields=[
-        shared.ObjectField(
+        components.ObjectField(
             name='event_name',
-            type=shared.FieldType.INTEGER,
-        ),
-        shared.ObjectField(
-            name='event_name',
-            type=shared.FieldType.BOOLEAN,
         ),
     ],
     primary_key='event_id',
-    table_name='events',
-)
+))
 
-res = s.object.create_object(req)
-
-if res.create_object_200_application_json_object is not None:
+if res.object is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `request`                                                | [shared.ObjectInput](../../models/shared/objectinput.md) | :heavy_check_mark:                                       | The request object to use for the request.               |
+| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `request`                                                        | [components.ObjectInput](../../models/components/objectinput.md) | :heavy_check_mark:                                               | The request object to use for the request.                       |
 
 
 ### Response
 
 **[operations.CreateObjectResponse](../../models/operations/createobjectresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## get_objects
 
@@ -74,22 +73,25 @@ Get all objects
 ```python
 import fabra
 
-
 s = fabra.Fabra(
-    security=shared.Security(
-        api_key_auth="",
-    ),
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 
 res = s.object.get_objects()
 
-if res.get_objects_200_application_json_object is not None:
+if res.object is not None:
     # handle response
+    pass
+
 ```
 
 
 ### Response
 
 **[operations.GetObjectsResponse](../../models/operations/getobjectsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

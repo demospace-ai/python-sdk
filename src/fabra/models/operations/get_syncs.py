@@ -2,30 +2,27 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import sync as shared_sync
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import sync as components_sync
 from dataclasses_json import Undefined, dataclass_json
 from fabra import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetSyncs200ApplicationJSON:
+class GetSyncsResponseBody:
     r"""Successfully fetched syncs"""
-    syncs: Optional[list[shared_sync.Sync]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('syncs'), 'exclude': lambda f: f is None }})
+    syncs: Optional[List[components_sync.Sync]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('syncs'), 'exclude': lambda f: f is None }})
     
 
 
 
-
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetSyncsResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    get_syncs_200_application_json_object: Optional[GetSyncs200ApplicationJSON] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    object: Optional[GetSyncsResponseBody] = dataclasses.field(default=None)
     r"""Successfully fetched syncs"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

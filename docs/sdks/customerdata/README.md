@@ -1,4 +1,5 @@
-# customer_data
+# CustomerData
+(*customer_data*)
 
 ### Available Operations
 
@@ -12,43 +13,30 @@ Query a single object record directly from a customer's source. The response pay
 
 ```python
 import fabra
-from fabra.models import operations, shared
+from fabra.models import components, operations
 
 s = fabra.Fabra(
-    security=shared.Security(
-        api_key_auth="",
-    ),
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
-req = operations.QueryObjectRequest(
+
+res = s.customer_data.query_object(request=operations.QueryObjectRequest(
+    end_customer_id='<value>',
+    object_id=906396,
     request_body=operations.QueryObjectRequestBody(
         filters=[
-            shared.QueryFilter(
-                field_name='user_id',
-                field_value='2',
-            ),
-            shared.QueryFilter(
-                field_name='user_id',
-                field_value='2',
-            ),
-            shared.QueryFilter(
-                field_name='user_id',
-                field_value='2',
-            ),
-            shared.QueryFilter(
+            components.QueryFilter(
                 field_name='user_id',
                 field_value='2',
             ),
         ],
     ),
-    end_customer_id='vel',
-    object_id=623564,
-)
+))
 
-res = s.customer_data.query_object(req)
-
-if res.query_object_200_application_json_object is not None:
+if res.object is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -61,4 +49,8 @@ if res.query_object_200_application_json_object is not None:
 ### Response
 
 **[operations.QueryObjectResponse](../../models/operations/queryobjectresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
